@@ -1,24 +1,27 @@
+body {
+	font-family: arial;
+}
 
 h1 {text-align:center; padding: 30px;}
 h2 {text-align:center; padding: 30px;}
 p {background-color: rgb(150, 150, 150); padding: 15px;}
+
 .menu {
         float: left;
-        width: 15%;
+	margin-left: 10%;
+	width: 10%;
 }
 
 .menu a {
-	background-color: rgb(100,100,100);
-	text-align: center;
 	padding: 8px 0px;
 	margin-bottom: 7px;	
-	width: 100%;	
-	display: block;
+	display: block;	
+	border-left-style: 5px solid; 
 }
 
 .iframe {
-	float: right;
-	width: 83%;
+	float: left;
+	width: 65%;
 	height: 500px;
 }
 
@@ -27,3 +30,5 @@ p {background-color: rgb(150, 150, 150); padding: 15px;}
 	       width: 100%;
        }
 }       
+
+code, samp {background-color: rgba(200, 200, 200, 0.5);}
