@@ -1,34 +1,53 @@
 body {
 	font-family: arial;
+	font-size: 16pt;
 }
 
 h1 {text-align:center; padding: 30px;}
 h2 {text-align:center; padding: 30px;}
-p {background-color: rgb(150, 150, 150); padding: 15px;}
+p {
+	background-color: rgb(150, 150, 150);
+	width: 60%;
+	margin-left: 20%;
+}
 
 .menu {
-        float: left;
-	margin-left: 10%;
-	width: 10%;
+        float: right;
+	max-width: 150px;
+	margin: 20px;
 }
 
 .menu a {
-	padding: 8px 0px;
 	margin-bottom: 7px;	
 	display: block;	
-	border-left-style: 5px solid; 
+	border-left: 5px solid black; 
 }
 
 .iframe {
 	float: left;
-	width: 65%;
-	height: 500px;
+	width: 75%;
+	height: 1000px;
+}
+
+.left {
+	float: left;
+	width: 20%
+}
+
+.right {
+	float: right;
+	width: 80%;
 }
 
 @media only screen and (max-width: 620px) {
-	.menu, .iframe {
+	.left, .right, .menu, .menu a {
 	       width: 100%;
+	       float: none;
        }
+       .menu a {
+		text-align: center;
+	}
+	.iframe { width: 95%; float: none;}
 }       
 
 code, samp {background-color: rgba(200, 200, 200, 0.5);}
