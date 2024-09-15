@@ -1,0 +1,34 @@
+body {
+	font-family: arial;
+}
+
+h1 {text-align:center; padding: 30px;}
+h2 {text-align:center; padding: 30px;}
+p {background-color: rgb(150, 150, 150); padding: 15px;}
+
+.menu {
+        float: left;
+	margin-left: 10%;
+	width: 10%;
+}
+
+.menu a {
+	padding: 8px 0px;
+	margin-bottom: 7px;	
+	display: block;	
+	border-left-style: 5px solid; 
+}
+
+.iframe {
+	float: left;
+	width: 65%;
+	height: 500px;
+}
+
+@media only screen and (max-width: 620px) {
+	.menu, .iframe {
+	       width: 100%;
+       }
+}       
+
+code, samp {background-color: rgba(200, 200, 200, 0.5);}
