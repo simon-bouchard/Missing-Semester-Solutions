@@ -3,9 +3,10 @@ body {
 	font-size: 12pt;
 }
 
-h1 {text-align:center; padding: 30px;}
-h2 {text-align:center; padding: 30px;}
-p {
+h1 {text-align: center; padding: 30px 0px 20px 0px;}
+h2 {text-align: center; padding: 30px 0px 20px 0px;}
+h3 {text-align: center; padding-bottom: 50px; padding-top: 20px}
+.p {
 	width: 60%;
 	margin-left: 20%;
 }
@@ -51,7 +52,7 @@ p {
 	       box-sizing: border-box;
        }
 
-       p {margin: 0px; width: 100%;}
+       .p {margin: 0px; width: 100%;}
 
        .menu a {
 		text-align: center;
@@ -59,4 +60,8 @@ p {
 	.iframe { width: 100%; float: none; box-sizing: border-box;}
 }       
 
+.instblock {margin:20px 0px 40px 40px;}
+
 code, samp {background-color: rgba(200, 200, 200, 0.5);}
+
+i {padding-top: 6px;}

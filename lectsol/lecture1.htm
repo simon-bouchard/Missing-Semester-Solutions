@@ -13,9 +13,28 @@
 
 <body>
 
+	<h3>Lecture 1</h3>
 	<ol>
-		<li>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <span><a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a></span> or a Linux virtual machine to use Unix-style command-line tools. To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </li>
+		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <span><a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a></span> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
+			<div class=instblock>
+			<p class="inst">If you are using Windows you can download wsl directly from powershell using
+			<code>wsl --install</code><br><i> Note: this is the only time you will be using powershell!</i></p>
+			</div>
+
+			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p></li>
+			<div class="instblock"
+			<p class="inst">I recommend using zsh as your default shell. You can install it with the following comands:</p>
+			<ol>	<li><p>To update your package repository:<br><code>sudo apt update</code></p></li>
+				<li><p>To install zsh:<br><code>sudo apt install zsh -y</code></p>
+				<p><i>Note: -y flag so you don't have to type y to accept install!</i></p></li>
+				<li><p>To verify install:<br><code>zsh --version</code></p>
+				<p><i>Note: installation verification won't be mentioned from now on.</i></p></li>
+</p>
+			</div>
+
+		<li><p>Create a new directory called missing under <span><code>/tmp</code></span></p>
+			<p class="instblock"><code>mkdir /tmp/missing</code></p>
 	</ol>
 
 </body>
