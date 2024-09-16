@@ -19,7 +19,8 @@
 
 			<div class=instblock>
 			<p class="inst">If you are using Windows you can download wsl directly from powershell using
-			<code>wsl --install</code><br><i> Note: this is the only time you will be using powershell!</i></p>
+			<code>wsl --install</code></p>
+			<p><i> Note: this is the only time you will be using powershell!</i></p>
 			</div>
 
 			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p></li>
@@ -35,6 +36,25 @@
 
 		<li><p>Create a new directory called missing under <span><code>/tmp</code></span></p>
 			<p class="instblock"><code>mkdir /tmp/missing</code></p>
+
+			<li>	<p>Look up the <code>touch</code> program. The <code>man</code> program is your friend.</p>
+				<p class="instblock"><code>man touch</code></p>
+				
+			<li>	<p>Use touch to create a new file called <code>semester</code> in <code>missing</code>.</p>
+				<p class=instblock><code>touch /tmp/missing/semester</code></p></li>	
+
+			<li>	<p>Write the following into that file, one line at a time:</p>
+				<p class="instcode">#!/bin/sh<br>
+				curl --head --silent https://missing.csail.mit.edu</p>
+				<div class="instblock">
+					<ol>
+						<li><code>echo '#!/bin/sh' &gt; semester</code></li>
+						<li><code>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></li>
+					</ol>
+				</div>
+				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href"https://www.gnu.org/software/bash/manual/html_node/Quoting.html">quoting</a> manual page for more information.</p>
+			</li>
+
 	</ol>
 
 </body>
