@@ -9,6 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -25,16 +29,18 @@
 <div style="overflow:auto">
 <div class="left">
 <div class='menu'>
-	<a href='lectsol/lecture1.htm' target="iframe">Lecture 1</a>
-	<a href='' target="iframe">Lecture 2</a>
-	<a href='' target="iframe">Lecture 3</a>
-	<a href='' target="iframe">Lecture 4</a>
-	<a href='' target="iframe">Lecture 5</a>
-	<a href='' target="iframe">Lecture 6</a>
-	<a href='' target="iframe">Lecture 7</a>
-	<a href='' target="iframe">Lecture 8</a>
-	<a href='' target="iframe">Lecture 9</a>
-	<a href='' target="iframe">Lecture 10</a>
+	<ul>
+		<li><a href='lectsol/lecture1.htm' target="iframe">Lecture 1</a></li>
+		<li><a href='' target="iframe">Lecture 2</a></li>
+		<li><a href='' target="iframe">Lecture 3</a></li>
+		<li><a href='' target="iframe">Lecture 4</a></li>
+		<li><a href='' target="iframe">Lecture 5</a></li>
+		<li><a href='' target="iframe">Lecture 6</a></li>
+		<li><a href='' target="iframe">Lecture 7</a></li>
+		<li><a href='' target="iframe">Lecture 8</a></li>
+		<li><a href='' target="iframe">Lecture 9</a></li>
+		<li><a href='' target="iframe">Lecture 10</a></li>
+	</ul>
 </div>
 </div>
 
@@ -43,7 +49,13 @@
 <iframe name="iframe" class="iframe" title="Exercise Solutions"></iframe> 
 
 </div>
-
+<script>
+	$(function() {
+	  $('ul li a').click(function() {
+	    $(this).addClass('active').siblings().removeClass('active');
+	  });
+	});
+</script>
 </div>
 
 
@@ -53,4 +65,4 @@
 	<p>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions">here</a>.</p>
 
 </body>
-</htlm>
+</html>
