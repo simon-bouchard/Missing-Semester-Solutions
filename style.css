@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: arial, helvetica, sans-serif;
 	font-size: 100%;
@@ -30,16 +34,19 @@ hr {margin-top: 30px; margin-bottom: 30px;}
 
 ul {
         float: right;
-	max-width: 150px;
+	width: 120px;
 	background-color: rgba(200, 200, 200, 0.5);
 	list-style-type:none;
 	margin: 0 20px 0 0;
 	padding: 0;
+	display: grid;
 }
+
+ul li { height: 60px}
 
 ul li a {
 	display: block;	
-	padding: 20px 20px;
+	padding: 20px;
 	text-decoration: none;
 	color: black;
 }
@@ -50,9 +57,8 @@ ul li a:hover {
 }
 
 .active {
-	color: red;
-	text-decoration-line: underline;
-	border-style: solid;
+	border: 2px solid; 
+	border-color: rgb(100, 100, 100); 
 }
 
 
