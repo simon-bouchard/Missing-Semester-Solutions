@@ -15,7 +15,7 @@
 
 	<h3>Lecture 1</h3>
 	<ol>
-		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <span><a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a></span> or a Linux virtual machine to use Unix-style command-line tools.</p>
+		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
 			<div class=instblock>
 			<p class="inst">If you are using Windows you can download wsl directly from powershell using
@@ -52,8 +52,56 @@
 						<li><code>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></li>
 					</ol>
 				</div>
-				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href"https://www.gnu.org/software/bash/manual/html_node/Quoting.html">quoting</a> manual page for more information.</p>
+				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
 			</li>
+
+			<li>	<p>Try to execute the file, i.e. type the path to the script (<code>./semester</code>) into your shell and press enter. Understand why it doesn’t work by consulting the output of <code>ls</code> (hint: look at the permission bits of the file).</p>
+				<div class="instblock">
+					<ol>
+						<li><code>./semester</code></li>
+						<p><code class=output>zsh: permission denied: ./semester</code></p>
+						<li><code>ls -l</code></li>
+						<p><code class=output>-rw-r--r-- 1 root root 61 Sep 21 00:11 semester</code></p>
+						<p>Here we can see that the root user has read and write permissions but not execute permissions (-rw-).</p>
+					</ol>
+				</div>
+					
+			<li>	<p>Run the command by explicitly starting the <code>sh</code> interpreter, and giving it the file <code>semester</code> as the first argument, i.e. <code>sh semester</code>. Why does this work, while <code>./semester</code> didn’t?</p>
+				<div class="instblock">
+					<ol>
+						<li><code>sh semester</code></li>
+						<pre><code class="ouput">
+HTTP/2 200
+server: GitHub.com
+content-type: text/html; charset=utf-8
+last-modified: Thu, 08 Aug 2024 20:16:01 GMT
+access-control-allow-origin: *
+etag: "66b52781-205d"
+expires: Sat, 21 Sep 2024 05:11:22 GMT
+cache-control: max-age=600
+x-proxy-cache: MISS
+x-github-request-id: AD57:16DB:91AA4E:A2E8A7:66EE5322
+accept-ranges: bytes
+age: 0
+date: Sat, 21 Sep 2024 05:01:22 GMT
+via: 1.1 varnish
+x-served-by: cache-yul1970032-YUL
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1726894882.484443,VS0,VE27
+vary: Accept-Encoding
+x-fastly-request-id: 65ccdb2c25c249620614e7e7db2df9a2b545f6ea
+content-length: 8285
+						</code></pre>
+						<p>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p>
+					</ol>
+			</li>
+
+			<li>	<p>Look up the <code>chmod</code> program (e.g. use <code>man chmod</code>).</p></li>
+
+			</li> 	<p>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang line for more information.</a></p>
+
+
 
 	</ol>
 
