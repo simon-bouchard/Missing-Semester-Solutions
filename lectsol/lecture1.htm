@@ -17,60 +17,59 @@
 	<ol>
 		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
-			<div class=instblock>
-			<p class="inst">If you are using Windows you can download wsl directly from powershell using
-			<code>wsl --install</code></p>
-			<p><i> Note: this is the only time you will be using powershell!</i></p>
-			</div>
+			<div class=inst><p>If you are using Windows you can download wsl directly from powershell using:</p>
+			<code class=in>wsl --install</code>
+			<p><i> Note: this is the only time you will be using powershell!</i></p></div>
 
 			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p></li>
-			<div class="instblock"
-			<p class="inst">I recommend using zsh as your default shell. You can install it with the following comands:</p>
-			<ol>	<li><p>To update your package repository:<br><code>sudo apt update</code></p></li>
-				<li><p>To install zsh:<br><code>sudo apt install zsh -y</code></p>
-				<p><i>Note: -y flag so you don't have to type y to accept install!</i></p></li>
-				<li><p>To verify install:<br><code>zsh --version</code></p>
-				<p><i>Note: installation verification won't be mentioned from now on.</i></p></li>
-</p>
+			<p class="instblock">I recommend using zsh as your default shell. You can install it with the following commands:</p>
+			<div class=instblock>
+			<ol>	<li><p>To update your package repository:<br><code class=in>sudo apt update</code></p></li>
+				<li><p>To install zsh:<br><code class=in>sudo apt install zsh -y</code></p>
+				<p><i>Note: -y flag so you don't have to type y to accept install.</i></p></li>
+				<li><p>To verify install:<br><code class=in>zsh --version</code></p>
+				<p><i>Note: installation verification won't be mentioned from now on.</i></p></li>			
+			</ol>
 			</div>
 
 		<li><p>Create a new directory called missing under <span><code>/tmp</code></span></p>
-			<p class="instblock"><code>mkdir /tmp/missing</code></p>
+			<p class="inst"><code class=in>mkdir /tmp/missing</code></p>
 
 			<li>	<p>Look up the <code>touch</code> program. The <code>man</code> program is your friend.</p>
-				<p class="instblock"><code>man touch</code></p>
+				<p class="inst"><code class=in>man touch</code></p>
 				
 			<li>	<p>Use touch to create a new file called <code>semester</code> in <code>missing</code>.</p>
-				<p class=instblock><code>touch /tmp/missing/semester</code></p></li>	
+				<p class=inst><code class=in>touch /tmp/missing/semester</code></p></li>	
 
 			<li>	<p>Write the following into that file, one line at a time:</p>
 				<p class="instcode">#!/bin/sh<br>
 				curl --head --silent https://missing.csail.mit.edu</p>
 				<div class="instblock">
 					<ol>
-						<li><code>echo '#!/bin/sh' &gt; semester</code></li>
-						<li><code>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></li>
+						<li><code class=in>echo '#!/bin/sh' &gt; semester</code></li>
+						<li><code class=in>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></li>
+						<p class=pinst>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
+
 					</ol>
 				</div>
-				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
-			</li>
+							</li>
 
 			<li>	<p>Try to execute the file, i.e. type the path to the script (<code>./semester</code>) into your shell and press enter. Understand why it doesn’t work by consulting the output of <code>ls</code> (hint: look at the permission bits of the file).</p>
 				<div class="instblock">
 					<ol>
-						<li><code>./semester</code></li>
-						<p><code class=output>zsh: permission denied: ./semester</code></p>
-						<li><code>ls -l</code></li>
-						<p><code class=output>-rw-r--r-- 1 root root 61 Sep 21 00:11 semester</code></p>
-						<p>Here we can see that the root user has read and write permissions but not execute permissions (-rw-).</p>
+						<li><code class=in>./semester</code></li>
+						<p><code class=out>zsh: permission denied: ./semester</code></p>
+						<li><code class=in>ls -l</code></li>
+						<p><code class=out>-rw-r--r-- 1 root root 61 Sep 21 00:11 semester</code></p>
+						<p class=pinst>Here we can see that the root user has read and write permissions but not execute permissions (-rw-).</p>
 					</ol>
 				</div>
 					
 			<li>	<p>Run the command by explicitly starting the <code>sh</code> interpreter, and giving it the file <code>semester</code> as the first argument, i.e. <code>sh semester</code>. Why does this work, while <code>./semester</code> didn’t?</p>
 				<div class="instblock">
 					<ol>
-						<li><code>sh semester</code></li>
-						<pre class="output"><code>HTTP/2 200
+						<li><code class=in>sh semester</code></li>
+						<pre class="out"><code>HTTP/2 200
 server: GitHub.com
 content-type: text/html; charset=utf-8
 last-modified: Thu, 08 Aug 2024 20:16:01 GMT
@@ -91,25 +90,26 @@ x-timer: S1726894882.484443,VS0,VE27
 vary: Accept-Encoding
 x-fastly-request-id: 65ccdb2c25c249620614e7e7db2df9a2b545f6ea
 content-length: 8285</code></pre>
-						<p>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p>
+						<p class=pinst>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p>
 					</ol>
 			</li>
 
 			<li>	<p>Look up the <code>chmod</code> program (e.g. use <code>man chmod</code>).</p></li>
 
 			<li> 	<p>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> line for more information.</p>
-				<div class="instblock">
-					<p><code>chmod +x semester</code></p>
-					<p>To add the execution bit to all users</p>
-					<p>Or</p>
-					<p><code>chmod 744 semester</code></p>
-					<p>To add it only for the root</p>
-					<p>The shell knows how to interpret the file because of the shebang specified at the top of the file.</p>
+				<div class="inst">
+					<p>To add the execution bit to all users:<br>
+					<code class=in>chmod +x semester</code></p>
+					<p>or</p>
+					<p>To add it only for the root:<br>
+					<code class=in>chmod 744 semester</code></p>
+					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).</p>
+					<i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command</i>
 				</div>
 			</li>
 
 			<li> 	<p>Use <code>|</code> and <code>&gt;</code> to write the “last modified” date output by <code>semester</code> into a file called <code>last-modified.txt</code> in your home directory.</p>
-				<p class="instblock"><code>./semester | head -n4 | tail -n1 &gt; last-modified.txt</code></p>
+				<p class="inst"><code class=in>./semester | head -n4 | tail -n1 &gt; last-modified.txt</code></p>
 			</li>
 
 			<li>	<p>Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from <code>/sys</code>. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.</p>
@@ -117,7 +117,7 @@ content-length: 8285</code></pre>
 
 				<div class="instblock">
 				<ol>
-					<li><code>cat /sys/class/power_supply/BAT1/capacity</code></li>
+					<li><code class=in>cat /sys/class/power_supply/BAT1/capacity</code></li>
 					<p>To read battery power. You might find this <a href="https://www.simplified.guide/linux/view-battery-information">guide</a> useful</p>
 					<li>Wsl doesn't have cpu temperature in sysfs</li>
 				</ol>
