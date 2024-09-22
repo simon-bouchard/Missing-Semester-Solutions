@@ -70,8 +70,7 @@
 				<div class="instblock">
 					<ol>
 						<li><code>sh semester</code></li>
-						<pre><code class="ouput">
-HTTP/2 200
+						<pre class="output"><code>HTTP/2 200
 server: GitHub.com
 content-type: text/html; charset=utf-8
 last-modified: Thu, 08 Aug 2024 20:16:01 GMT
@@ -91,15 +90,39 @@ x-cache-hits: 0
 x-timer: S1726894882.484443,VS0,VE27
 vary: Accept-Encoding
 x-fastly-request-id: 65ccdb2c25c249620614e7e7db2df9a2b545f6ea
-content-length: 8285
-						</code></pre>
+content-length: 8285</code></pre>
 						<p>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p>
 					</ol>
 			</li>
 
 			<li>	<p>Look up the <code>chmod</code> program (e.g. use <code>man chmod</code>).</p></li>
 
-			</li> 	<p>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang line for more information.</a></p>
+			<li> 	<p>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> line for more information.</p>
+				<div class="instblock">
+					<p><code>chmod +x semester</code></p>
+					<p>To add the execution bit to all users</p>
+					<p>Or</p>
+					<p><code>chmod 744 semester</code></p>
+					<p>To add it only for the root</p>
+					<p>The shell knows how to interpret the file because of the shebang specified at the top of the file.</p>
+				</div>
+			</li>
+
+			<li> 	<p>Use <code>|</code> and <code>&gt;</code> to write the “last modified” date output by <code>semester</code> into a file called <code>last-modified.txt</code> in your home directory.</p>
+				<p class="instblock"><code>./semester | head -n4 | tail -n1 &gt; last-modified.txt</code></p>
+			</li>
+
+			<li>	<p>Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from <code>/sys</code>. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.</p>
+
+
+				<div class="instblock">
+				<ol>
+					<li><code>cat /sys/class/power_supply/BAT1/capacity</code></li>
+					<p>To read battery power. You might find this <a href="https://www.simplified.guide/linux/view-battery-information">guide</a> useful</p>
+					<li>Wsl doesn't have cpu temperature in sysfs</li>
+				</ol>
+				</div>
+			</li>
 
 
 

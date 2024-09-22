@@ -19,7 +19,7 @@ p {font-size: 1em}
 
 footer {text-align: center; color: rgba(100, 100, 100, 0.7); font-size: 1em;}
 
-code, samp, .code {background-color: rgba(200, 200, 200, 0.5); font-size: 1.1em}
+code, samp, .code {background-color: rgba(220, 220, 220, 0.3); font-size: 1.1em}
 
 ol li {margin-bottom: 15px}
 
@@ -106,4 +106,22 @@ ul li a:hover {
 
 .instblock {margin:20px 0px 40px 40px;}
 
+code.output, pre.output {
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	width: calc(100% - 100px);
+	display: block;
+	padding: 8px 6px;
+	max-height: 150px;
+	overflow-y: auto;
+	border-radius: 0px;
+}
 
+li > code, .instblock code {
+	border: 1px solid black;
+	width: calc(100% - 100px);
+	display: block;
+	padding: 8px 6px;
+	border-radius: 5px;
+}
