@@ -27,6 +27,8 @@ i {margin-left: 25px}
 
 hr {margin-top: 30px; margin-bottom: 30px;}
 
+header.p p {text-align: center}
+
 .p {
 	width: 50%;
 	margin-left: 25%;
@@ -66,6 +68,7 @@ ul li a:hover {
 	float: left;
 	width: 66.6666%;
 	height: 90vh;
+	min-height: 600px;
 	border: 2px solid rgb(200, 200, 200)
 }
 
@@ -79,7 +82,7 @@ ul li a:hover {
 	width: 75%;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 720px) {
 	.left, .right, .menu, .menu a {
 	       width: 100%;
 	       float: none;
@@ -106,23 +109,25 @@ ul li a:hover {
 
 .instblock {margin:20px 0px 40px 40px;}
 
-.inst {margin: 20px 0px 40px 82px}
+.inst {
+	margin: 20px 0px 40px 80px;
+}
 
 code.out, pre.out {
 	border: 1px solid black;
-	background-color: black;
+	background-color: hsla(0, 0%, 0%, 0.9);
 	color: white;
-	width: calc(100% - 100px);
 	display: block;
 	padding: 8px 6px;
 	max-height: 150px;
+	width: calc(100% - 120px);
 	overflow-y: auto;
 	border-radius: 0px;
 }
 
 .in {
 	border: 1px solid black;
-	width: calc(100% - 100px);
+	width: calc(100% - 120px);
 	display: block;
 	padding: 8px 6px;
 	border-radius: 5px;
@@ -139,7 +144,22 @@ ul.instblock {
 }       
 
 .pinst, i {
-	width: calc(100% - 100px);
+	width: calc(100% - 120px);
 }
 
-p.inst p.instblock 
+.b {
+}
+
+.in::after {
+	content: <button>copy</button> ;
+	float: right;
+}
+
+.instcode {
+	border: 1px dashed gray;
+	background-color: hsla(0, 0%, 85%, 0.3);
+	width: calc(100% - 50px);
+	padding: 8px 6px;
+	margin-left: 10px;
+}
+
