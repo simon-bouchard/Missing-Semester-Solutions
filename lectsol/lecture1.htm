@@ -44,6 +44,7 @@
 			<li>	<p>Write the following into that file, one line at a time:</p>
 				<p class="instcode">#!/bin/sh<br>
 				curl --head --silent https://missing.csail.mit.edu</p>
+				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
 				<div class="instblock">
 					<ol>
 						<li><code class=in>echo '#!/bin/sh' &gt; semester</code></li>
@@ -51,24 +52,24 @@
 					</ol>
 
 				</div>
-				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
+				
 							</li>
 
 			<li>	<p>Try to execute the file, i.e. type the path to the script (<code>./semester</code>) into your shell and press enter. Understand why it doesn’t work by consulting the output of <code>ls</code> (hint: look at the permission bits of the file).</p>
 				<div class="instblock">
 					<ol>
-						<li><code class=in>./semester</code></li>
-						<p><code class=out>zsh: permission denied: ./semester</code></p>
-						<li><code class=in>ls -l</code></li>
+						<li><code class=in>./semester</code>
+						<p><code class=out>zsh: permission denied: ./semester</code></p></li>
+						<li><code class=in>ls -l</code>
 						<p><code class=out>-rw-r--r-- 1 root root 61 Sep 21 00:11 semester</code></p>
-						<p class=pinst>Here we can see that the root user has read and write permissions but not execute permissions (<code>-rw-</code>).</p>
+						<p class=pinst>Here we can see that the root user has read and write permissions but not execute permissions (<code>-rw-</code>).</p></li>
 					</ol>
 				</div>
 					
 			<li>	<p>Run the command by explicitly starting the <code>sh</code> interpreter, and giving it the file <code>semester</code> as the first argument, i.e. <code>sh semester</code>. Why does this work, while <code>./semester</code> didn’t?</p>
 				<div class="instblock">
 					<ol>
-						<li><code class=in>sh semester</code></li>
+						<li><code class=in>sh semester</code>
 						<pre class="out"><code>HTTP/2 200
 server: GitHub.com
 content-type: text/html; charset=utf-8
@@ -90,7 +91,7 @@ x-timer: S1726894882.484443,VS0,VE27
 vary: Accept-Encoding
 x-fastly-request-id: 65ccdb2c25c249620614e7e7db2df9a2b545f6ea
 content-length: 8285</code></pre>
-						<p class=pinst>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p>
+						<p class=pinst>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p></li>
 					</ol>
 			</li>
 
@@ -103,8 +104,8 @@ content-length: 8285</code></pre>
 					<p>or</p>
 					<p>To add it only for the root:<br>
 					<code class=in>chmod 744 semester</code></p>
-					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).</p>
-					<i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command</i>
+					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).<i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command although it is not recommanded to proceed as such.</i></p>
+					
 				</div>
 			</li>
 
