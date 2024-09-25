@@ -3,7 +3,9 @@
 
 <head>
 
-<title>Missing semester exercise solutions</title>
+<title>2024 Solution | Missing Solutions</title>
+
+<link rel="icon" type="image/x-icon" href="images/command.png">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +22,7 @@
 <nav>
 	<ul class=nav>
 		<li><a href="home.htm">Home</a></li>
-		<li class="active"><a href="solution.htm">Exercise</a></li>
+		<li class="nactive"><a href="solution.htm">Exercise</a></li>
 		<li><a href="about.htm">About</a></li>
 	</ul>
 </nav>
@@ -63,11 +65,20 @@
 </div>
 <script>
 	$(function() {
-	  $('ul li').click(function() {
-	    $(this).addClass('activem').siblings().removeClass('activem');
+	  $('div.menu ul li').click(function() {
+	    $(this).addClass('active').siblings().removeClass('active');
 	  });
 	});
 </script>
+
+<script>
+	$(function() {
+	  $('div.menu ul li').click(function() {
+	    $(this).addClass('visited')
+	  });
+	});
+</script>
+
 </div>
 
 

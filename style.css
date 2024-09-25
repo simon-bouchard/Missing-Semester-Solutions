@@ -5,6 +5,7 @@
 body {
 	font-family: arial, helvetica, sans-serif;
 	font-size: 100%;
+	margin: 0;
 }
 
 h1 {text-align: center; padding: 30px 0px 20px 0px;}
@@ -17,7 +18,7 @@ h4 {text-align: center;}
 
 p {font-size: 1em}
 
-footer {text-align: center; color: rgba(100, 100, 100, 0.7); font-size: 1em;}
+footer {text-align: center; color: rgba(100, 100, 100, 1); font-size: 1em; opacity: 0.8; margin-bottom: 20px;}
 
 code, samp, .code {background-color: rgba(220, 220, 220, 0.3); font-size: 1.1em}
 
@@ -41,7 +42,7 @@ a {color: hsla(220, 30%, 20%, 1);}
 .menu ul {
         float: right;
 	width: 120px;
-	background-color: hsla(220, 30%, 50%, 0.5);
+	background-color: hsla(220, 30%, 40%, 1);
 	list-style-type:none;
 	margin: 0 20px 0 0;
 	padding: 0;
@@ -54,17 +55,21 @@ a {color: hsla(220, 30%, 20%, 1);}
 	display: block;	
 	padding: 20px;
 	text-decoration: none;
-	color: black;
-}
-
-.menu ul li a:hover {
-	background-color: hsla(220, 20%, 40%, 1);
 	color: white;
 }
 
-.activem {
-	border: 2px solid; 
-	border-color: hsla(220, 10%, 20%, 1);
+.menu ul li a:hover {
+	background-color: hsla(220, 30%, 60%, 1);
+	color: white;
+}
+
+.active {
+	border: 3px solid black;
+
+}
+
+.visited {
+	background-color: hsla(220, 30%, 30%, 1);
 }
 
 /* naviguation style */
@@ -84,7 +89,7 @@ ul.nav {
 
 ul.nav li {
 	float: left;
-	padding: 10px 0;
+	padding: 0px 0;
 }
 
 ul.nav li:last-child a {
@@ -95,9 +100,9 @@ ul.nav li a {
 	display: inline-block;
 	color: white;
 	text-align: center;
-	padding: 4px 16px;
+	padding: 10px 13px;
 	text-decoration: none;
-	font-size: 1.2em;
+	font-size: 1.14em;
 	/*border-right: 2px solid white;*/
 }
 
@@ -105,10 +110,11 @@ ul.nav li:hover {
 	background-color: hsla(220, 30%, 60%, 1);
 }	
 
-ul.nav li.active {
+ul.nav li.nactive {
 	background-color: hsla(220, 30%, 30%, 1); 
 }
 
+/*Exercise page division*/
 .iframe {
 	float: left;
 	width: 66.6666%;
@@ -127,6 +133,7 @@ ul.nav li.active {
 	width: 75%;
 }
 
+/*Media querry responsivness*/
 @media only screen and (max-width: 720px) {
 	.left, .right, .menu, .menu a {
 	       width: 100%;
@@ -208,3 +215,14 @@ ul.instblock {
 	margin-left: 10px;
 }
 
+.list li {
+	padding: 5px 0;
+}
+
+.list li a {
+	padding: 4px 0;
+ }
+
+ .list li a:hover {
+	 font-weight: bold;
+}
