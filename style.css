@@ -84,11 +84,13 @@ ul.nav {
 	padding: 0;
 	overflow: hidden;
 	background-color: hsla(220, 30%, 40%, 1);
-	width: 271.05px;
+	/*width: 244.288px;*/
+	display: flex;
+	justify-content:center;
 }
 
 ul.nav li {
-	float: left;
+	float: none;
 	padding: 0px 0;
 }
 
@@ -114,13 +116,15 @@ ul.nav li.nactive {
 	background-color: hsla(220, 30%, 30%, 1); 
 }
 
-/*Exercise page division*/
+/*Exercise page iframe/menu division*/
 .iframe {
 	float: left;
 	width: 66.6666%;
 	height: 90vh;
 	min-height: 600px;
-	border: 2px solid rgb(200, 200, 200)
+	border: 2px solid rgb(200, 200, 200);
+	overflow: auto;
+	resize: both;
 }
 
 .left {
@@ -133,7 +137,7 @@ ul.nav li.nactive {
 	width: 75%;
 }
 
-/*Media querry responsivness*/
+/*Media querry responsivness for main pages*/
 @media only screen and (max-width: 720px) {
 	.left, .right, .menu, .menu a {
 	       width: 100%;
@@ -142,7 +146,7 @@ ul.nav li.nactive {
 	       padding: 20px 0px;
        }
 
-       .p {margin: 0px; width: 100%;}
+       .p {margin: 0 25px; width: 100%;}
 
        .menu a {
 		text-align: center;
@@ -154,11 +158,14 @@ ul.nav li.nactive {
 
 	.menu ul {margin-bottom: 20px;}
 
-	.iframe { width: 100%; float: none; box-sizing: border-box;}
+	.iframe { width: 100%; float: none; box-sizing: border-box; resize: none;}
 
 	hr {width: 90%}
+
+	main {margin: 0 25px}
 }       
 
+/*lecture formatting*/
 .instblock {margin:20px 0px 40px 40px;}
 
 .inst {
@@ -202,9 +209,16 @@ ul.instblock {
 .b {
 }
 
-.in::after {
-	content: <button>copy</button> ;
-	float: right;
+p.codehead {
+	background-color: hsla(0, 0%, 40%, 0.9);
+	width: calc(100% - 120px);
+	color: hsla(0, 0%, 40%, 0.9);
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 0;
+	border: 1px solid black;
+	border-bottom: none;
+	font-size: 0.85em;
 }
 
 .instcode {
@@ -215,6 +229,7 @@ ul.instblock {
 	margin-left: 10px;
 }
 
+/*lecture list*/
 .list li {
 	padding: 5px 0;
 }
