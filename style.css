@@ -24,6 +24,8 @@ h3 {text-align: center; padding-bottom: 50px; padding-top: 20px}
 
 h4 {text-align: center;}
 
+h5 {font-size: 1.2em; margin-bottom: 25px;}
+
 p {font-size: 1em}
 
 footer {text-align: center; color: rgba(100, 100, 100, 1); font-size: 1em; opacity: 0.8; margin-bottom: 20px;}
@@ -46,6 +48,8 @@ a {color: hsla(220, 30%, 20%, 1);}
 }
 
 footer p {margin-bottom: 7px;}
+
+.ablock {margin-bottom: 50px;}
 
 /* side menu style*/
 
