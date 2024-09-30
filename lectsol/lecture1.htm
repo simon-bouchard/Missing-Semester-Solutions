@@ -13,7 +13,7 @@
 
 <body>
 
-	<h3>Lecture 1</h3>
+	<h3><a href="https://missing.csail.mit.edu/2020/course-shell/" target="_blank">Lecture 1</a></h3>
 	<ol>
 		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
@@ -121,7 +121,7 @@ content-length: 8285</code></pre>
 					<li><p>To read battery power: You might find this <a href="https://www.simplified.guide/linux/view-battery-information" target="_blank">guide</a> useful.<code class=in>cat /sys/class/power_supply/BAT1/capacity</code></p>
 						<p class=pinst>Will return a number from 0 to 100</p></li>
 					
-					<li>Wsl doesn't have cpu temperature in sysfs</li>
+					<li>Wsl doesn't have cpu temperature in sysfs. However, if you are on linux, <code>cat /sys/class/thermal/thermal_zone*/temp</code> should work. You might have to try it on different thermal zones before it works.<br><a href="https://www.baeldung.com/linux/cpu-temperature">This guide</a> might help.</li>
 				</ol>
 				</div>
 			</li>

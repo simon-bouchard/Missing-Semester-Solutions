@@ -176,6 +176,8 @@ ul.nav li.nactive a {
 
 	.menu ul {margin-bottom: 20px;}
 
+	.menu ul li a {padding: 25px 10px 20px 10px}
+
 	.iframe { width: 100%; float: none; box-sizing: border-box; resize: none;}
 
 	hr {width: 90%}
