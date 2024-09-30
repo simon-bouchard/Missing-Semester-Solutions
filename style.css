@@ -4,6 +4,7 @@
 	--darkBlue: hsla(220, 30%, 30%, 1);
 	--lightBlue: hsla(220, 30%, 60%, 1);
 	--gray: hsla(0, 0%, 70%, 0.5);
+	--lightGray: hsla(0, 0%, 95%, 0.3);
 }
 
 * {
@@ -43,8 +44,8 @@ header.p p {text-align: center}
 a {color: hsla(220, 30%, 20%, 1);}
 
 .p {
-	width: 50%;
-	margin-left: 25%;
+	width: 750px;
+	margin: 0 auto 25px;
 }
 
 footer p {margin-bottom: 7px;}
@@ -52,15 +53,18 @@ footer p {margin-bottom: 7px;}
 .ablock {margin-bottom: 50px;}
 
 /* side menu style*/
+.menu {
+	position: relative;
+}
 
 .menu ul {
-        float: right;
 	width: 120px;
 	background-color: var(--gray); 
 	list-style-type:none;
 	margin: 0 20px 0 0;
 	padding: 0;
-	display: grid;
+	position: absolute;
+	left: calc(50% - 750px / 2 - 120px - 25px);
 }
 
 .menu ul li a {
@@ -68,17 +72,21 @@ footer p {margin-bottom: 7px;}
 	padding: 25px 0 20px 20px;
 	text-decoration: none;
 	color: black;
+	text-align: left;
 }
 
 .menu ul li a:hover {
-	background-color: var(--lightBlue); 
+	background-color: var(--lightGray); 
+	font-weight: bold;
 }
 
 div.menu ul li.active {
 	background-color: var(--darkBlue) !important;
 }
 
-div.menu ul li.active a:hover {background-color: var(--darkBlue);}
+div.menu ul li.active.visited a:hover {background-color: var(--darkBlue);}
+
+div.menu ul li.visited a:hover {background-color: var(--lightBlue);}
 
 .visited {
 	background-color: var(--blue);
@@ -136,28 +144,22 @@ ul.nav li.nactive a {
 
 /*Exercise page iframe/menu division*/
 .iframe {
-	float: left;
-	width: 66.6666%;
+	width: 750px;
 	height: 90vh;
 	min-height: 634px;
 	border: 2px solid rgb(200, 200, 200);
 	overflow: auto;
 	resize: both;
+	display: inline-block;
 }
 
-.left {
-	float: left;
-	width: 25%
-}
-
-.right {
-	float: right;
-	width: 75%;
+.center {
+	text-align: center;
 }
 
 /*Media querry responsivness for main pages*/
-@media only screen and (max-width: 720px) {
-	.left, .right, .menu, .menu a {
+@media only screen and (max-width: calc(750px + (120px + 25px) * 2 + 15px)) {
+	.menu, .menu a .center {
 	       width: 100%;
 	       float: none;
 	       max-width: 100%;
@@ -172,17 +174,33 @@ ul.nav li.nactive a {
 
 	.menu {
 	margin: auto;
-       	width: 200px}
+	width: 100%;
+}
 
-	.menu ul {margin-bottom: 20px;}
+	.menu ul {
+		margin: 0 auto 20px auto;
+		position: static;
+		width: 250px;
+	}
 
-	.menu ul li a {padding: 25px 10px 20px 10px}
+	.menu ul li {
+	}
 
-	.iframe { width: 100%; float: none; box-sizing: border-box; resize: none;}
+	.menu ul li a {
+	padding: 25px 10px 20px 10px;
+	width: auto;
+	text-align: center;
+}
+
+	.iframe {
+       		width: calc(100% - 50px); 
+		float: none;
+	       	box-sizing: border-box;
+	       	resize: none;
+		margin: auto;
+	}
 
 	hr {width: 90%}
-
-	main {margin: 0 25px}
 
 	.instblock {margin-left: 0;}
 	.inst {margin-left: 0px;}
