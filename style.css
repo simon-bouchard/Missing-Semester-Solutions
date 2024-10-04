@@ -6,7 +6,9 @@
 	--gray: hsla(0, 0%, 70%, 0.5);
 	--lightGray: hsla(0, 0%, 90%, 0.3);
 	--darkGray: hsla(0, 0%, 50%, 0.5);
+	--codeColor: hsla(0, 0%, 86%, 0.3);
 	--baseWidth: 750px;
+	--menuWidth: 140px;
 }
 
 * {
@@ -33,7 +35,7 @@ p {font-size: 1em}
 
 footer {text-align: center; color: rgba(100, 100, 100, 1); font-size: 1em; opacity: 0.8; margin-bottom: 20px;}
 
-code, samp, .code {background-color: rgba(220, 220, 220, 0.3); font-size: 1.1em; white-space: nowrap;}
+code, samp, .code {background-color: var(--codeColor); font-size: 1.1em; white-space: nowrap;}
 
 ol li {margin-bottom: 25px}
 
@@ -60,18 +62,18 @@ footer p {margin-bottom: 7px;}
 }
 
 .menu ul {
-	width: 120px;
+	width: var(--menuWidth);
 	background-color: var(--gray); 
 	list-style-type:none;
 	margin: 0 20px 0 0;
 	padding: 0;
 	position: absolute;
-	left: calc(50% - var(--baseWidth) / 2 - 120px - 25px);
+	left: calc(50% - var(--baseWidth) / 2 - var(--menuWidth) - 25px);
 }
 
 .menu ul li a {
 	display: block;	
-	padding: 25px 0 20px 20px;
+	padding: 25px 0 20px 30px;
 	text-decoration: none;
 	color: black;
 	text-align: left;
@@ -256,7 +258,7 @@ ul.instblock {
 }       
 
 .pinst, i {
-	width: calc(100% - 120px);
+	width: calc(100% - var(--menuWidth));
 }
 
 .b {
