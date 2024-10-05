@@ -53,7 +53,7 @@
 	</ul>
 
 
-<iframe name="iframe" class="iframe" title="Exercise Solutions">Click on a lecture on the left to show its solutions</iframe> 
+<iframe name="iframe" id="exo" class="iframe" title="Exercise Solutions">Click on a lecture on the left to show its solutions</iframe> 
 
 </div>
 </div>
@@ -71,6 +71,19 @@
 	    $(this).addClass('visited')
 	  });
 	});
+</script>
+
+<script>
+  window.addEventListener('message', function(event) {
+    if (event.origin !== "https://simon-bouchard.github.io") {
+      return;
+    }
+
+    const data = event.data;
+    if (data.iframeSrc) {
+      document.getElementById('exo').src = data.iframeSrc;
+    }
+  }, false);
 </script>
 
 </div>

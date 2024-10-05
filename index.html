@@ -45,7 +45,7 @@
 	<h4 style="text-align: left;">Exercise solutions:</h4>
 
 	<ul class=list>
-		<li><a href='lectsol/lecture1.htm'>Lecture 1</a></li>
+		<li><a href='solution.htm' onclick="sendMessageToIframe('lectsol/lecture1.htm')">Lecture 1</a></li>
 		<li><a href='lectsol/lecture2.htm'>Lecture 2</a></li>
 		<li><a href='lectsol/lecture3.htm'>Lecture 3</a></li>
 		<li><a href='lectsol/lecture4.htm'>Lecture 4</a></li>
@@ -69,5 +69,12 @@
 	<p>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions" target="_blank">here</a>.</p>
 
 </footer>
+
+<script>
+  function SendMessageToIframe(url) {
+    const iframePage = window.open('solution.htm');
+    iframePage.postMessage({ iframeSrc: url }, '*');
+  }
+</script>
 </body>
 </html>
