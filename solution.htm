@@ -12,8 +12,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -66,25 +64,23 @@ if (params.has('link')) {
   const link = params.get('link');
 
   document.getElementById(link).click();
-  document.getElementById(link).addClass('active');
 }
 
 </script>
 
 <script>
-	$(function() {
-	  $('div.menu ul li').click(function() {
-	    $(this).addClass('active').siblings().removeClass('active');
-	  });
-	});
-</script>
 
-<script>
-	$(function() {
-	  $('div.menu ul li').click(function() {
-	    $(this).addClass('visited')
-	  });
-	});
+const buttons = document.querySelectorAll('div.menu ul li');
+
+buttons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    buttons.forEach(function(btn) {
+      btn.classList.remove('active'); 
+    });
+
+    button.classList.add('active', 'visited');
+  });
+});
 </script>
 
 
