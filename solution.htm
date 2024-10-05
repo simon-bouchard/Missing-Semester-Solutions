@@ -12,8 +12,21 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  window.addEventListener('message', function(event) {
+    console.log(event);
+    if (event.origin !== "*") {
+      return;
+    }
 
+    const data = event.data;
+    if (data.iframeSrc) {
+      document.getElementById('exo').src = data.iframeSrc;
+    }
+  }, false);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -73,18 +86,7 @@
 	});
 </script>
 
-<script>
-  window.addEventListener('message', function(event) {
-    if (event.origin !== "https://simon-bouchard.github.io") {
-      return;
-    }
 
-    const data = event.data;
-    if (data.iframeSrc) {
-      document.getElementById('exo').src = data.iframeSrc;
-    }
-  }, false);
-</script>
 
 </div>
 

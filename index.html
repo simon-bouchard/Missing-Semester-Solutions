@@ -18,7 +18,7 @@
 
 <nav>
 	<ul class=nav>
-		<li class="nactive"><a href="home.htm">Home</a></li>
+		<li class="nactive"><a href="index.html">Home</a></li>
 		<li><a href="solution.htm">Exercises</a></li>
 		<li><a href="about.htm">About</a></li>
 	</ul>
@@ -56,7 +56,21 @@
 		<li><a href='lectsol/lecture9.htm'>Lecture 9</a></li>
 		<li><a href='lectsol/lecture10.htm'>Lecture 10</a></li>
 	</ul>
+<script>
+  function SendMessageToIframe(url) {
+    const ifram = document.getElementById('iframepage');
+    iframe.src = url;
+    
+    iframe.onload = function() {
+      console.log("Iframe has loaded")
+      const iframePageWindow = iframe.contentWindow;
+      console.log(iframePageWindow);
+      iframePage.postMessage({ iframeSrc: url }, '*');
+    };
+  }
+</script>
 
+<iframe id="iframePage" src="" style="display:none;"></iframe>
 	<p><br>I recommand only looking at the solutions after completing the exercises or if you are really stuck.</p>
 
 	<p>Most exercises have many different possible solutions so don't worry if your solution isn't the same as mine. As long as it works, it works <br>
@@ -70,11 +84,6 @@
 
 </footer>
 
-<script>
-  function SendMessageToIframe(url) {
-    const iframePage = window.open('solution.htm');
-    iframePage.postMessage({ iframeSrc: url }, '*');
-  }
-</script>
+
 </body>
 </html>
