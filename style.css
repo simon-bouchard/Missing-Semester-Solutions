@@ -300,3 +300,8 @@ pre {margin: 0;}
 }
 
 ul.list.nobold li a {font-weight: normal;} /*for about list*/
+
+.default {
+	margin-left: 15px;
+	color: hsla(0, 0%, 30%, 0.6);
+}
