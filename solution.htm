@@ -12,20 +12,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script>
-  window.addEventListener('message', function(event) {
-    console.log(event);
-    if (event.origin !== "*") {
-      return;
-    }
-
-    const data = event.data;
-    if (data.iframeSrc) {
-      document.getElementById('exo').src = data.iframeSrc;
-    }
-  }, false);
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -53,7 +39,7 @@
 <div class="center">
 <div class='menu'>
 	<ul>
-		<li><a href='lectsol/lecture1.htm' target="iframe">Lecture 1</a></li>
+		<li><a href='lectsol/lecture1.htm' target="iframe" id="lect1">Lecture 1</a></li>
 		<li><a href='lectsol/lecture2.htm' target="iframe">Lecture 2</a></li>
 		<li><a href='lectsol/lecture3.htm' target="iframe">Lecture 3</a></li>
 		<li><a href='lectsol/lecture4.htm' target="iframe">Lecture 4</a></li>
@@ -70,6 +56,21 @@
 
 </div>
 </div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const iframe = document.getElementById("exo")
+
+if (params.has('link')) {
+  const link = params.get('link');
+
+  document.getElementById(link).click();
+  document.getElementById(link).addClass('active');
+}
+
+</script>
+
 <script>
 	$(function() {
 	  $('div.menu ul li').click(function() {
