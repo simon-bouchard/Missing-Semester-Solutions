@@ -247,6 +247,12 @@ code.out, pre.out {
 	border-radius: 5px;
 	overflow-x: auto;
 	white-space: nowrap;
+	position: relative;
+	background-color: var(--codeColor);
+}
+
+.in code {
+	background-color: transparent;
 }
 
 ul.instblock {
@@ -285,6 +291,13 @@ p.codehead {
 }
 
 pre {margin: 0;}
+
+.copy {
+	position: absolute;
+	right: 6px;
+	bottom: 6.6px;
+	cursor: pointer;
+}
 
 /*lecture list*/
 .list li {

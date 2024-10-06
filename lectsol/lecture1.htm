@@ -18,7 +18,8 @@
 		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
 			<div class=inst>If you are using Windows you can download wsl directly from powershell using:
-				<code class=in>wsl --install</code>
+				<div class="in"><button class="copy">copy</button>
+					<code>wsl --install</code></div>
 			<p><i> Note: this is the only time you will be using powershell!</i></p></div>
 
 			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p></li>
@@ -129,6 +130,28 @@ content-length: 8285</code></pre>
 
 
 	</ol>
+
+<script>
+
+document.querySelectorAll('.in button.copy').forEach(button => {
+  button.addEventListener("click", function() {
+    const code = this.nextElementSibling.textContent;
+
+    navigator.clipboard.writeText(code).then(() => {
+      this.textContent = "Copied!";
+      this.classList.add("copied");
+      
+      setTimeout(() => {
+        this.textContent = "Copy";
+        this.classList.remove("copied");
+      }, 2000);
+    }).catch(err => {
+      console.error("failed to copy text: ", err);
+    });
+  });
+});
+
+</script>
 
 </body>
 </html>
