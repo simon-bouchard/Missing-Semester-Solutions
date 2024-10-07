@@ -191,6 +191,16 @@ code.out, pre.out {
 	max-width: 100%;
 }
 
+.in::-webkit-scrollbar {
+	height: 8px;
+}
+
+.in::-webkit-scrollbar-thumb {
+	border: 1px solid darkgray;
+	border-radius: 4px;
+	background-color: darkgray;
+}
+
 .in code {
 	background-color: transparent;
 }
@@ -313,7 +323,7 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	width: auto;
 	text-align: center;
 	font-weight: 500;
-	}
+}
 
 	.iframe {
        		width: calc(100% - 50px); 
