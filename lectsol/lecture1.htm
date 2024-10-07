@@ -64,6 +64,7 @@
 						<li><div class=code-container>
 							<code class=in>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code>
 							<button class="copy">Copy</button></div></li>
+						<p class=pinst>Make sure you are in the correct directory. Otherwise, naviguate to the correct directory with <code>cd /tmp/missing/semester</code> or use an absilute reference for the code above. ex: <code>echo '#!/bin/sh' &gt; /tmp/missing/semester</code>.<br><i>Note: <code>&gt;</code> rewrites the file while <code>&gt;&gt;</code> add the string to the end of the file.</i></p>
 					</ol>
 
 				</div>
@@ -124,7 +125,7 @@ content-length: 8285</code></pre>
 					To add it only for the root:
 					<div class=code-container><code class=in>chmod 744 semester</code>
 					<button class="copy">Copy</button></div>
-					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).<i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command although it is not recommanded to proceed as such.</i></p>
+					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).<br><i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command although it is not recommanded to do so.</i></p>
 					
 				</div>
 			</li>
@@ -144,7 +145,10 @@ content-length: 8285</code></pre>
 							<button class=copy>Copy</button></div>
 						<p class=pinst>Will return a number from 0 to 100</p></li>
 					
-					<li>Wsl doesn't have cpu temperature in sysfs. However, if you are on linux, <code>cat /sys/class/thermal/thermal_zone*/temp</code> should work. You might have to try it on different thermal zones before it works.<br><a href="https://www.baeldung.com/linux/cpu-temperature">This guide</a> might help.</li>
+					<li>Wsl doesn't have cpu temperature in sysfs. However, if you are on linux, 
+						<div class=code-container><code class=in>cat /sys/class/thermal/thermal_zone*/temp</code>
+						<button class=copy>Copy</button></div>
+						should work. You have to look at the <code>type</code> of different thermal zones to find the one associated to the cpu and change the <code>*</code> for the appropriate number.<br><a href="https://www.baeldung.com/linux/cpu-temperature">This guide</a> might help.</li>
 				</ol>
 				</div>
 			</li>
