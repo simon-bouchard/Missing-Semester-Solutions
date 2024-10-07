@@ -14,33 +14,43 @@
 <body>
 
 	<h3><a href="https://missing.csail.mit.edu/2020/course-shell/" target="_blank">Lecture 1</a></h3>
-	<ol>
+	<ol class=lectlist>
 		<li><p>For this course, you need to be using a Unix shell like Bash or ZSH. If you are on Linux or macOS, you don’t have to do anything special. If you are on Windows, you need to make sure you are not running cmd.exe or PowerShell; you can use <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">Windows Subsystem for Linux</a> or a Linux virtual machine to use Unix-style command-line tools.</p>
 
 			<div class=inst>If you are using Windows you can download wsl directly from powershell using:
-				<div class="in"><button class="copy">copy</button>
-					<code>wsl --install</code></div>
-			<p><i> Note: this is the only time you will be using powershell!</i></p></div>
+				<div class="code-container"><code class=in>wsl --install</code>
+						<button class="copy">copy</button>
+</div>
+<p><i> Note: this is the only time you will be using powershell!</i></p></div></div>
 
-			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p></li>
+			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p>
 			<p class="instblock">I recommend using zsh as your default shell. You can install it with the following commands:</p>
 			<div class=instblock>
-				<ol>	<li><p>To update your package repository:<br><span><code class=in>sudo apt update</code></span></p></li>
-				<li><p>To install zsh:<br><span><code class=in>sudo apt install zsh -y</code></span></p>
+				<ol>	<li>To update your package repository:
+					<div class=code-container><div class="in"><code>sudo apt update</code></div>
+					<button class="copy">Copy</button</button></li>
+					<li>To install zsh:
+						<div class=code-container><div class="in"><code>sudo apt install zsh -y</code></div>
+						<button class="copy">Copy</button></div>
 				<p><i>Note: -y flag so you don't have to type y to accept install.</i></p></li>
-				<li><p>To verify install:<br><span><code class=in>zsh --version</code></span></p>
+					<li>To verify install:
+						<div class=code-container><div class="in"><code>zsh --version</code></div>
+							<button class="copy">Copy</button></div>
 				<p><i>Note: installation verification won't be mentioned from now on.</i></p></li>			
 			</ol>
-			</div>
+					</div></li>
 
 		<li><p>Create a new directory called missing under <span><code>/tmp</code></span></p>
-			<p class="inst"><span><code class=in>mkdir /tmp/missing</code></span></p>
+			<div class="inst"><div class=code-container><div class="in"><code>mkdir /tmp/missing</code></div>
+					<button class="copy">Copy</button></div></div>
 
 			<li>	<p>Look up the <code>touch</code> program. The <code>man</code> program is your friend.</p>
-				<p class="inst"><span><code class=in>man touch</code></span></p>
+				<div class="inst"><div class=code-container><div class="in"><code>man touch</code></div>
+						<button class=copy>Copy</button></div></div>
 				
 			<li>	<p>Use touch to create a new file called <code>semester</code> in <code>missing</code>.</p>
-				<p class=inst><span><code class=in>touch /tmp/missing/semester</code></span></p></li>	
+				<div class=inst><div class=code-container><div class="in"><code>touch /tmp/missing/semester</code></div>
+						<button class="copy">Copy</button></div></div></li>	
 
 			<li>	<p>Write the following into that file, one line at a time:</p>
 				<p class="instcode">#!/bin/sh<br>
@@ -48,8 +58,12 @@
 				<p>The first line might be tricky to get working. It’s helpful to know that <code>#</code> starts a comment in Bash, and <code>!</code> has a special meaning even within double-quoted (<code>"</code>) strings. Bash treats single-quoted strings (<code>'</code>) differently: they will do the trick in this case. See the Bash <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" target="_blank">quoting</a> manual page for more information.</p>
 				<div class="instblock">
 					<ol>
-						<li><code class=in>echo '#!/bin/sh' &gt; semester</code></li>
-						<li><code class=in>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></li>
+						<li><div class=code-container><div class="in">
+								<code>echo '#!/bin/sh' &gt; semester</code></div>
+								<button class="copy">Copy</button></div></li>
+						<li><div class=code-container><div class="in">
+							<code>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code></div>
+							<button class="copy">Copy</button></div></li>
 					</ol>
 
 				</div>
@@ -59,9 +73,11 @@
 			<li>	<p>Try to execute the file, i.e. type the path to the script (<code>./semester</code>) into your shell and press enter. Understand why it doesn’t work by consulting the output of <code>ls</code> (hint: look at the permission bits of the file).</p>
 				<div class="instblock">
 					<ol>
-						<li><code class=in>./semester</code>
+						<li><div class=code-container><code class=in>./semester</code>
+								<button class="copy">Copy</button></div>
 						<p class=codehead><br></p><code class=out>zsh: permission denied: ./semester</code></li>
-						<li><code class=in>ls -l</code>
+						<li><div class=code-container><code class=in>ls -l</code>
+								<button class="copy">Copy</button></div>
 						<p class=codehead><br></p><code class=out>-rw-r--r-- 1 root root 61 Sep 21 00:11 semester</code>
 						<p class=pinst>Here we can see that the root user has read and write permissions but not execute permissions (<code>-rw-</code>).</p></li>
 					</ol>
@@ -70,7 +86,8 @@
 			<li>	<p>Run the command by explicitly starting the <code>sh</code> interpreter, and giving it the file <code>semester</code> as the first argument, i.e. <code>sh semester</code>. Why does this work, while <code>./semester</code> didn’t?</p>
 				<div class="instblock">
 					<ol>
-						<li><code class=in>sh semester</code>
+						<li><div class=code-container><code class=in>sh semester</code>
+								<button class="copy">Copy</button></div>
 						<p class=codehead><br></p><pre class="out"><code>HTTP/2 200
 server: GitHub.com
 content-type: text/html; charset=utf-8
@@ -100,18 +117,21 @@ content-length: 8285</code></pre>
 
 			<li> 	<p>Use <code>chmod</code> to make it possible to run the command <code>./semester</code> rather than having to type <code>sh semester</code>. How does your shell know that the file is supposed to be interpreted using <code>sh</code>? See this page on the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">shebang</a> line for more information.</p>
 				<div class="inst">
-					<p>To add the execution bit to all users:<br>
-					<code class=in>chmod +x semester</code></p>
+					To add the execution bit to all users:
+					<div class=code-container><code class=in>chmod +x semester</code>
+					<button class="copy">Copy</button></div>
 					<p>or</p>
-					<p>To add it only for the root:<br>
-					<code class=in>chmod 744 semester</code></p>
+					To add it only for the root:
+					<div class=code-container><code class=in>chmod 744 semester</code>
+					<button class="copy">Copy</button></div>
 					<p class=pinst>The shell knows how to interpret the file because of the shebang specified at the top of the file (#!/bin/sh).<i>Note: you don't need a shebang if you invoke the shell manually using the <code>sh</code> command although it is not recommanded to proceed as such.</i></p>
 					
 				</div>
 			</li>
 
 			<li> 	<p>Use <code>|</code> and <code>&gt;</code> to write the “last modified” date output by <code>semester</code> into a file called <code>last-modified.txt</code> in your home directory.</p>
-				<p class="inst"><code class=in>./semester | head -n4 | tail -n1 &gt; last-modified.txt</code></p>
+				<div class="inst"><div class=code-container><code class=in>./semester | head -n4 | tail -n1 &gt; last-modified.txt</code>
+						<button class=copy>Copy</button></div></p>
 			</li>
 
 			<li>	<p>Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from <code>/sys</code>. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.</p>
@@ -119,7 +139,9 @@ content-length: 8285</code></pre>
 
 				<div class="instblock">
 				<ol>
-					<li><p>To read battery power: You might find this <a href="https://www.simplified.guide/linux/view-battery-information" target="_blank">guide</a> useful.<code class=in>cat /sys/class/power_supply/BAT1/capacity</code></p>
+					<li>To read battery power: You might find this <a href="https://www.simplified.guide/linux/view-battery-information" target="_blank">guide</a> useful.
+						<div class=code-container><code class=in>cat /sys/class/power_supply/BAT1/capacity</code>
+							<button class=copy>Copy</button></div>
 						<p class=pinst>Will return a number from 0 to 100</p></li>
 					
 					<li>Wsl doesn't have cpu temperature in sysfs. However, if you are on linux, <code>cat /sys/class/thermal/thermal_zone*/temp</code> should work. You might have to try it on different thermal zones before it works.<br><a href="https://www.baeldung.com/linux/cpu-temperature">This guide</a> might help.</li>
@@ -133,12 +155,12 @@ content-length: 8285</code></pre>
 
 <script>
 
-document.querySelectorAll('.in button.copy').forEach(button => {
+document.querySelectorAll('.code-container button.copy').forEach(button => {
   button.addEventListener("click", function() {
-    const code = this.nextElementSibling.textContent;
+    const code = this.previousElementSibling.textContent;
 
     navigator.clipboard.writeText(code).then(() => {
-      this.textContent = "Copied!";
+      this.textContent = "Copied";
       this.classList.add("copied");
       
       setTimeout(() => {
@@ -148,6 +170,22 @@ document.querySelectorAll('.in button.copy').forEach(button => {
     }).catch(err => {
       console.error("failed to copy text: ", err);
     });
+  });
+});
+
+</script>
+
+<script>
+
+const codeBlocks = document.querySelectorAll('div.code-container');
+
+codeBlocks.forEach(function(code) {
+  code.addEventListener('mouseover', function() {
+    code.lastElementChild.classList.add('display');
+  });
+
+  code.addEventListener('mouseout', function() {
+    code.lastElementChild.classList.remove('display');
   });
 });
 

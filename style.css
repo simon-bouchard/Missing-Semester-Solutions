@@ -160,66 +160,6 @@ ul.nav li.nactive a {
 	text-align: center;
 }
 
-/*Media querry responsivness for main pages*/
-@media only screen and (max-width: calc(750px + (120px + 25px) * 2 + 15px)) {
-	.menu, .menu a .center {
-	       width: 100%;
-	       float: none;
-	       max-width: 100%;
-	       padding: 20px 0px;
-       }
-
-       .p {
-       		margin: 0 auto; 
-		width: calc(100% - 50px);
-		max-width: 750px;
-	}
-
-       .menu a {
-		text-align: center;
-	}
-
-	.menu {
-	margin: auto;
-	width: 100%;
-}
-
-	.menu ul {
-		margin: 20px auto 30px auto;
-		position: static;
-		width: 250px;
-	}
-
-	.menu ul li:last-child a {
-		padding-bottom: 30px;
-	}
-
-	.menu ul li:first-child a {
-		padding-top: 30px;
-	}
-
-	.menu ul li a {
-	padding: 25px 10px 20px 10px;
-	width: auto;
-	text-align: center;
-	font-weight: 500;
-}
-
-	.iframe {
-       		width: calc(100% - 50px); 
-		max-width: var(--baseWidth);
-		float: none;
-	       	box-sizing: border-box;
-	       	resize: none;
-		margin: auto;
-	}
-
-	hr {width: 90%}
-
-	.instblock {margin-left: 0;}
-	.inst {margin-left: 0px;}
-}       
-
 /*lecture formatting*/
 .instblock {margin:20px 0px 40px 20px;}
 
@@ -240,15 +180,15 @@ code.out, pre.out {
 }
 
 .in {
-	border: 1px solid black;
+	border: 1px solid hsl(0, 0%, 70%);
 	width: calc(100% - 100px);
 	display: block;
 	padding: 8px 6px;
 	border-radius: 5px;
 	overflow-x: auto;
 	white-space: nowrap;
-	position: relative;
 	background-color: var(--codeColor);
+	max-width: 100%;
 }
 
 .in code {
@@ -264,7 +204,7 @@ ul.instblock {
 }       
 
 .pinst, i {
-	width: calc(100% - var(--menuWidth));
+	width: calc(100% - 120px);
 }
 
 .b {
@@ -292,11 +232,22 @@ p.codehead {
 
 pre {margin: 0;}
 
+pre.out code {white-space: pre;}
+
 .copy {
-	position: absolute;
-	right: 6px;
 	bottom: 6.6px;
 	cursor: pointer;
+	margin-left: 10px;
+	align-self: flex-end;
+	margin-bottom: 5px;
+	display: none;
+}
+
+.display {display: inline-block;}
+
+.code-container {
+	display: flex;
+	align-items: flex-start;
 }
 
 /*lecture list*/
@@ -317,4 +268,103 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 .default {
 	margin-left: 15px;
 	color: hsla(0, 0%, 30%, 0.6);
+}
+
+/*Media querry responsivness for main pages*/
+@media only screen and (max-width: calc(750px + (120px + 25px) * 2 + 15px + 41px)) and (min-width: 500px) {
+	.menu, .menu a .center {
+	       width: 100%;
+	       float: none;
+	       max-width: 100%;
+	       padding: 20px 0px;
+       }
+
+       .p {
+       		margin: 0 auto; 
+		width: calc(100% - 50px);
+		max-width: 750px;
+	}
+
+       .menu a {
+		text-align: center;
+	}
+
+	.menu {
+	margin: auto;
+	width: 100%;
+	}
+
+	.menu ul {
+		margin: 20px auto 30px auto;
+		position: static;
+		width: 250px;
+	}
+
+	.menu ul li:last-child a {
+		padding-bottom: 30px;
+	}
+
+	.menu ul li:first-child a {
+		padding-top: 30px;
+	}
+
+	.menu ul li a {
+	padding: 25px 10px 20px 10px;
+	width: auto;
+	text-align: center;
+	font-weight: 500;
+	}
+
+	.iframe {
+       		width: calc(100% - 50px); 
+		max-width: var(--baseWidth);
+		float: none;
+	       	box-sizing: border-box;
+	       	resize: none;
+		margin: auto;
+	}
+
+	hr {width: 90%}
+
+}       
+
+@media (max-width: 500px) {
+
+	.inst {
+		margin-left: calc( 10vw);
+	}
+
+	.instblock {
+		margin-left: calc(10vw - 40px);
+	}
+
+	.lectlist {
+		padding-left: calc(25.5px);
+	}
+
+	code.in, div.in code, div.in{
+		width: calc(100% - 65px)
+	}
+
+	code.out, p.codehead, pre.out {
+		width: calc(100% - 8.675px)
+	}
+
+	.pinst {
+		width: calc(100% - 8.675px)
+	}
+
+	.menu {
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.iframe {
+		width: 100%;
+		margin: auto;
+	}
+
+	.menu ul {max-width: 100%}
+
 }
