@@ -258,6 +258,7 @@ pre.out code {white-space: pre;}
 .code-container {
 	display: flex;
 	align-items: flex-start;
+	margin: 5px 0;
 }
 
 /*lecture list*/
@@ -323,7 +324,7 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	width: auto;
 	text-align: center;
 	font-weight: 500;
-}
+	}
 
 	.iframe {
        		width: calc(100% - 50px); 
@@ -352,8 +353,7 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 		padding-left: calc(25.5px);
 	}
 
-	code.in, div.in code, div.in{
-		width: calc(100% - 65px)
+	code.in, div.in code, div.in{width: calc(100% - 65px)
 	}
 
 	code.out, p.codehead, pre.out {
@@ -375,6 +375,30 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 		margin: auto;
 	}
 
-	.menu ul {max-width: 100%}
+	.menu ul {
+		width: 100%;
+		margin: 20px auto 30px auto;
+		position: static;
+		max-width: 250px;
+	}
 
+	.p {
+		margin: 0 auto;
+		width: calc(100% - 30px);
+	}
+
+	.menu ul li a {
+	padding: 25px 10px 20px 10px;
+	width: auto;
+	text-align: center;
+	font-weight: 500;
+	}
+
+	.menu ul li:last-child a {
+		padding-bottom: 30px;
+	}
+
+	.menu ul li:first-child a {
+		padding-top: 30px;
+	}
 }
