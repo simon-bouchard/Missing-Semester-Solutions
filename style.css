@@ -79,6 +79,14 @@ footer p {margin-bottom: 7px;}
 	text-align: left;
 }
 
+.menu ul li:first-child a {
+	padding-top: 28px;
+}
+
+.menu ul li:last-child a {
+	padding-bottom: 32px;
+}
+
 .menu ul li a:hover {
 	background-color: var(--darkGray); 
 	font-weight: bold;
@@ -150,7 +158,7 @@ ul.nav li.nactive a {
 .iframe {
 	width: var(--baseWidth);
 	height: 90vh;
-	min-height: 634px;
+	min-height: 649px;
 	border: 2px solid rgb(200, 200, 200);
 	overflow: auto;
 	display: inline-block;
