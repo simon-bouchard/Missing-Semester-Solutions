@@ -55,6 +55,95 @@
 </div>
 </div>
 
+<div class=player-container>
+
+	<p id=trackName>Track name here</p>
+
+	<div class=audio-player>
+
+		<img src="images/backward.png" alt="Prev" id='prevBtn'>
+
+		<audio id=audioPlayer controls>
+			<source src="fire/Bliss.mp3" type="audio/mpeg">
+			Your browser does not support audio element
+		</audio>
+
+		<img src="images/skip.png" alt="Next" id='nextBtn'>
+	</div>
+
+
+</div>
+
+<script>
+
+	const playlist = [
+			{name: 'Coding Bliss', src: 'fire/Bliss.mp3'},
+			{name: 'Back again', src: 'fire/Back again.mp3'},
+			{name: 'Brizzy', src: 'fire/brizzy.mp3'},
+			{name: '', src: 'fire/155 oui.mp3'},
+			{name: 'This is how I felt when doing the exercises', src: 'fire/She be.mp3'},
+			{name: '', src: 'fire/fcked.mp3'},
+			{name: '', src: 'fire/Sylvestre.mp3'},
+			{name: '', src: 'fire/Mr Wilson.mp3'},
+			{name: '', src: 'fire/Not it.mp3'},
+			{name: '', src: 'fire/sea.mp3'},
+			{name: '', src: 'fire/Mello.mp3'},
+			{name: '', src: 'fire/sai.mp3'},
+			{name: 'Rain cookies', src: 'fire/rain cookies.mp3'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/'},
+	];
+
+	let currentTrack = 0;
+
+	const audioPlayer = document.getElementById('audioPlayer');
+	const trackName = document.getElementById('trackName');
+
+	function loadTrack(index) {
+		audioPlayer.src = playlist[index].src;
+		trackName.textContent = playlist[index].name
+		
+		audioPlayer.play()
+	}
+
+	document.getElementById('nextBtn').addEventListener('click', () => {
+		currentTrack = (currentTrack + 1) % playlist.length;
+		loadTrack(currentTrack);
+	});
+
+	document.getElementById('prevBtn').addEventListener('click', () => {
+		currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+		loadTrack(currentTrack);
+	});
+
+	audioPlayer.addEventListener('ended', () => {
+		currentTrack = (currentTrack + 1) % playlist.length;
+		loadTrack(currentTrack);
+	});
+
+</script>
+
+<hr class="solid" width=750px>
+
+</main>
+
+<footer>
+	<p>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions" target="_blank">here</a>.</p>
+</footer>
+
 <script>
 
 const buttons = document.querySelectorAll('div.menu ul li');
@@ -85,18 +174,6 @@ if (params.has('link')) {
 }
 
 </script>
-
-
-
-</div>
-
-
-<hr class="solid" width=750px>
-
-</main>
-
-<footer>
-	<p>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions" target="_blank">here</a>.</p>
 
 </body>
 </html>
