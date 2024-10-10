@@ -303,12 +303,27 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	border-radius: 30px;
 }
 
-#nextBtn, #prevBtn {
+.audioBtn {
 	width: 15px;
 	height: 15px;
-	align-self: center;
 	background-color: transparent;
 	border: none;
+	align-self: center;
+}
+
+.button-container {
+	width: 30px;
+	height: 30px;
+	align-self: center;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.button-container:hover {
+	background-color: #E0E0E0;
 }
 
 #trackName {
@@ -451,4 +466,6 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 		width: 100%;
 		margin: auto;
 	}
+
+	.copy {display: inline-block;}
 }
