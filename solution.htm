@@ -57,7 +57,7 @@
 
 <div class=player-container>
 
-	<p id=trackName>Track name here</p>
+	<p id=trackName>Here are some beats to help you relax while you do the exercises</p>
 
 	<div class=audio-player>
 
@@ -114,7 +114,12 @@
 
 	function loadTrack(index) {
 		audioPlayer.src = playlist[index].src;
-		trackName.textContent = playlist[index].name
+
+		if (playlist[index].name) {
+			trackName.textContent = playlist[index].name
+		} else {
+			trackName.textContent = "Here are some beats to help you relax while you do the exercises"
+		}
 		
 		audioPlayer.play()
 	}
