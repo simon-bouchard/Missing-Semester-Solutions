@@ -169,6 +169,8 @@ ul.nav li.nactive a {
 }
 
 /*lecture formatting*/
+.lectlist {margin-right: 5px;}
+
 .instblock {margin:20px 0px 40px 20px;}
 
 .inst {
@@ -182,14 +184,14 @@ code.out, pre.out {
 	display: inline-block;
 	padding: 8px 6px;
 	max-height: 150px;
-	width: calc(100% - 100px);
+	width: calc(100% - 95px);
 	overflow-y: auto;
 	border-radius: 0px;
 }
 
 .in {
 	border: 1px solid hsl(0, 0%, 70%);
-	width: calc(100% - 100px);
+	width: calc(100% - 95px);
 	display: block;
 	padding: 8px 6px;
 	border-radius: 5px;
@@ -222,7 +224,7 @@ ul.instblock {
 }       
 
 .pinst, i {
-	width: calc(100% - 120px);
+	width: calc(100% - 115px);
 }
 
 .b {
@@ -230,7 +232,7 @@ ul.instblock {
 
 p.codehead {
 	background-color: hsla(0, 0%, 40%, 0.9);
-	width: calc(100% - 100px);
+	width: calc(100% - 95px);
 	color: hsla(0, 0%, 40%, 0.9);
 	display: inline-block;
 	margin-bottom: 0;
@@ -243,7 +245,7 @@ p.codehead {
 .instcode {
 	border: 1px dashed gray;
 	background-color: hsla(0, 0%, 85%, 0.3);
-	width: calc(100% - 50px);
+	width: calc(100% - 45px);
 	padding: 8px 6px;
 	margin-left: 10px;
 }
@@ -313,8 +315,8 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 }
 
 .button-container {
-	width: 30px;
-	height: 30px;
+	width: 33px;
+	height: 33px;
 	align-self: center;
 	border-radius: 20px;
 	display: flex;
@@ -324,18 +326,33 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 }
 
 .button-container:hover {
-	background-color: #E0E0E0;
+	background-color: hsla(0, 0%, 80%, 0.6);
 }
 
-#prevBtn {margin-left: 8px;}
+#audioPrevBtn {margin-left: 8px;}
 
-#nextBtn {margin-right: 8px;}
+#audioNextBtn {margin-right: 8px;}
 
 #trackName {
 	margin-bottom: 7px;
+	height: 2.5em;
 }
 
 #audioPlayer {
+}
+
+/*Next and previous button for lectures*/
+.navBtn {
+}
+
+#prevBtn {
+	float: left;
+	margin-left: 10px;
+}
+
+#nextBtn {
+	float: right;
+	margin-right: 10px;
 }
 
 /*Media querry responsivness for main pages*/

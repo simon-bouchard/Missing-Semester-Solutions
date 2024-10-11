@@ -61,14 +61,14 @@
 
 	<div class=audio-player>
 
-		<div class=button-container id='prevBtn'><img src="images/backward.png" alt="Prev" class='audioBtn'></div>
+		<div class=button-container id='audioPrevBtn'><img src="images/backward.png" alt="Prev" class='audioBtn'></div>
 
 		<audio id=audioPlayer controls>
 			<source src="fire/Bliss.mp3" type="audio/mpeg">
 			Your browser does not support audio element
 		</audio>
 
-		<div class=button-container id='nextBtn'><img src="images/skip.png" alt="Next" class='audioBtn'></div>
+		<div class=button-container id='audioNextBtn'><img src="images/skip.png" alt="Next" class='audioBtn'></div>
 	</div>
 
 
@@ -77,34 +77,33 @@
 <script>
 
 	const playlist = [
-			{name: 'Coding Bliss', src: 'fire/Bliss.mp3'},
+			{name: 'This is how it feels when the code finally works', src: 'fire/Bliss.mp3'},
 			{name: 'Back again', src: 'fire/Back again.mp3'},
 			{name: 'Brizzy', src: 'fire/brizzy.mp3'},
 			{name: '', src: 'fire/155 oui.mp3'},
 			{name: 'This is how I felt when doing the exercises', src: 'fire/She be.mp3'},
 			{name: '', src: 'fire/fcked.mp3'},
 			{name: '', src: 'fire/Sylvestre.mp3'},
-			{name: '', src: 'fire/Mr Wilson.mp3'},
+			{name: "I do not own the rights to the original so please don't listen to it too much", src: 'fire/Mr Wilson.mp3'},
 			{name: '', src: 'fire/Not it.mp3'},
 			{name: '', src: 'fire/sea.mp3'},
-			{name: '', src: 'fire/Mello.mp3'},
+			{name: 'I made this one just for you', src: 'fire/Mello.mp3'},
 			{name: '', src: 'fire/sai.mp3'},
 			{name: 'Rain cookies', src: 'fire/rain cookies.mp3'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
-			{name: '', src: 'fire/'},
+			{name: '', src: 'fire/Xmas blue.mp3'},
+			{name: '', src: 'fire/Burt.mp3'},
+			{name: '', src: "fire/fifi brin d'acier.mp3"},
+			{name: 'space milk', src: 'fire/space milk.mp3'},
+			{name: '', src: 'fire/That thangggg.mp3'},
+			{name: '', src: 'fire/back pain.mp3'},
+			{name: '', src: 'fire/finess.mp3'},
+			{name: '', src: 'fire/That thang.mp3'},
+			{name: '', src: 'fire/Mk Ultra.mp3'},
+			{name: '', src: 'fire/No relief.mp3'},
+			{name: '', src: 'fire/Dead Star.mp3'},
+			{name: '', src: 'fire/lost Aminor 154 bpm.mp3'},
+			{name: "I do not own the rights to the original so please don't listen to it too much", src: 'fire/Juliet.mp3'},
+			{name: '', src: 'fire/Finally.mp3'},
 	];
 
 	let currentTrack = 0;
@@ -124,12 +123,12 @@
 		audioPlayer.play()
 	}
 
-	document.getElementById('nextBtn').addEventListener('click', () => {
+	document.getElementById('audioNextBtn').addEventListener('click', () => {
 		currentTrack = (currentTrack + 1) % playlist.length;
 		loadTrack(currentTrack);
 	});
 
-	document.getElementById('prevBtn').addEventListener('click', () => {
+	document.getElementById('audioPrevBtn').addEventListener('click', () => {
 		currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
 		loadTrack(currentTrack);
 	});
