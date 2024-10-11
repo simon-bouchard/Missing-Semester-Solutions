@@ -150,20 +150,31 @@
 
 <script>
 
+/*For next and prev buttons in lecture page*/
+	/*To send the current lecture id to the lecture page*/
+	const iframe = document.getElementById('exo');
+	const buttons = document.querySelectorAll('div.menu ul li');
+	
+	buttons.forEach(function(button) {
+		button.addEventListener('click', (event) => {
+			const clickedId = event.target.id;
+				
+			iframe.addEventListener('load', () => {
+				iframe.contentWindow.postMessage(clickedId, '*');
+			});
+		});
+	});
+
+	/*To change the lecture*/
 window.addEventListener('message', (event) => {
-		/*if(event.data.has(lect)) {*/
-			const lectNum = event.data;
+		if(event.data.lect) {
+			const lectNum = event.data.lect;
 			
 			document.getElementById(lectNum).click();
-		});
-/*});*/
+		};
+});
 
-</script>
-
-<script>
-
-const buttons = document.querySelectorAll('div.menu ul li');
-
+/* to add active and visited classes*/
 buttons.forEach(function(button) {
   button.addEventListener("click", function() {
     buttons.forEach(function(btn) {
@@ -173,20 +184,16 @@ buttons.forEach(function(button) {
     button.classList.add('active', 'visited');
   });
 });
-</script>
 
-<script>
-
+/*To load lecture from index page*/
 const params = new URLSearchParams(window.location.search);
-const iframe = document.getElementById("exo")
 
 if (params.has('link')) {
   const link = params.get('link');
 
   document.getElementById(link).click();
   
-  const section = document.getElementById('exo');
-  section.scrollIntoView({ behavior: 'smooth' });
+  iframe.scrollIntoView({ behavior: 'smooth' });
 }
 
 </script>
