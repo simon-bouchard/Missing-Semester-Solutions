@@ -150,6 +150,18 @@
 
 <script>
 
+window.addEventListener('message', (event) => {
+		/*if(event.data.has(lect)) {*/
+			const lectNum = event.data;
+			
+			document.getElementById(lectNum).click();
+		});
+/*});*/
+
+</script>
+
+<script>
+
 const buttons = document.querySelectorAll('div.menu ul li');
 
 buttons.forEach(function(button) {
