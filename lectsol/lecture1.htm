@@ -164,9 +164,14 @@ content-length: 8285</code></pre>
 			
 	</ol>
 
-<div class=navBtn> 
-	<button id=prevBtn>Previous</button>
-	<button id=nextBtn>Next</button>
+<div class=navBtn>
+	<div class=tooltip>
+		<img src="../images/next.png" id=prevBtn>
+		<span class=tooltipText>Go to the next lecture</span></div>
+
+	<div class='tooltip right'>
+		<img src="../images/next.png" id=nextBtn>
+		<span class=tooltipText>Go to the previous lecture</span></div>
 </div>
 
 <script>
@@ -210,6 +215,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 		
 <script>
 
+/*Add copy button */
 document.querySelectorAll('.code-container button.copy').forEach(button => {
   button.addEventListener("click", function() {
     const code = this.previousElementSibling.textContent;
@@ -228,10 +234,8 @@ document.querySelectorAll('.code-container button.copy').forEach(button => {
   });
 });
 
-</script>
 
-<script>
-
+/*Make copy button apear on hover*/
 const codeBlocks = document.querySelectorAll('div.code-container');
 
 codeBlocks.forEach(function(code) {

@@ -303,7 +303,7 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	background-color: #f5f5f6;
 	display: flex;
 	justify-content: center;
-	border-radius: 30px;
+	border-radius: 40px;
 }
 
 .audioBtn {
@@ -318,7 +318,7 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	width: 33px;
 	height: 33px;
 	align-self: center;
-	border-radius: 20px;
+	border-radius: 30px;
 	display: flex;
 	justify-content: center;
 	cursor: pointer;
@@ -342,17 +342,62 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 }
 
 /*Next and previous button for lectures*/
-.navBtn {
+.navBtn img {
+	margin-bottom: 25px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
 }
 
 #prevBtn {
 	float: left;
-	margin-left: 10px;
+	margin-left: 100px;
+	transform: rotate(180deg);
 }
 
 #nextBtn {
 	float: right;
-	margin-right: 10px;
+	margin-right: 100px;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltipText {
+	visibility: hidden;
+	width: 130px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 130%;
+	right: -50px;
+	background-color: hsla(0, 0%, 5%, 0.9);
+	color: white;
+}
+
+.tooltip.right .tooltipText {
+	right: calc(65px - 15px);
+}
+
+.tooltip:hover .tooltipText {
+	visibility: visible;
+}
+
+.right {float: right;}
+
+.tooltip .tooltipText::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
 }
 
 /*Media querry responsivness for main pages*/
@@ -490,4 +535,12 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	}
 
 	.copy {display: inline-block;}
+}
+
+@media (max-width: 452px) {
+	.player-container {
+		width: calc(100% - 4px);
+		margin-left: 2px;
+		margin-right: 2px;
+	}
 }
