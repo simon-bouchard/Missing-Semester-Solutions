@@ -306,6 +306,11 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 	border-radius: 40px;
 }
 
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+	background-color: #f5f5f6;
+    }
+
 .audioBtn {
 	width: 15px;
 	height: 15px;
