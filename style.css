@@ -189,6 +189,23 @@ code.out, pre.out {
 	border-radius: 0px;
 }
 
+.file {
+	border: 1px solid black;
+	background-color: hsla(0, 0%, 10%, 0.9);
+	color: white;
+	display: block;
+	padding: 8px 6px;
+	max-height: 150px;
+	width: calc(100%);
+	overflow-y: auto;
+	border-radius: 0px;
+}
+
+.file-cont {
+	width: calc(100% - 95px);
+	margin-bottom: 15px; 
+}
+
 .in {
 	border: 1px solid hsl(0, 0%, 70%);
 	width: calc(100% - 95px);
@@ -199,6 +216,7 @@ code.out, pre.out {
 	white-space: nowrap;
 	background-color: var(--codeColor);
 	max-width: 100%;
+	max-height: 150px;
 }
 
 .in::-webkit-scrollbar {
@@ -240,6 +258,10 @@ p.codehead {
 	border: 1px solid black;
 	border-bottom: none;
 	font-size: 0.85em;
+}
+
+.file-cont p.codehead {
+	width: 100%;
 }
 
 .instcode {
