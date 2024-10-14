@@ -203,7 +203,6 @@ code.out, pre.out {
 
 .file-cont {
 	width: calc(100% - 95px);
-	margin-bottom: 15px; 
 }
 
 .in {
@@ -253,7 +252,7 @@ p.codehead {
 	width: calc(100% - 95px);
 	color: hsla(0, 0%, 40%, 0.9);
 	display: inline-block;
-	margin-bottom: 0;
+	margin: 0;
 	padding: 0;
 	border: 1px solid black;
 	border-bottom: none;
@@ -290,7 +289,7 @@ pre.out code {white-space: pre;}
 .code-container {
 	display: flex;
 	align-items: flex-start;
-	margin: 5px 0;
+	margin: 5px 0 15px;
 }
 
 /*lecture list*/
