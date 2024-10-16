@@ -191,6 +191,7 @@ code.out, pre.out {
 
 .file {
 	border: 1px solid black;
+	border-radius: 0 0 5px 5px;
 	background-color: hsla(0, 0%, 10%, 0.9);
 	color: white;
 	display: block;
@@ -198,7 +199,21 @@ code.out, pre.out {
 	max-height: 150px;
 	width: calc(100%);
 	overflow-y: auto;
-	border-radius: 0px;
+}
+
+.file::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.file::-webkit-scrollbar-thumb {
+	border: 1px solid darkgray;
+	border-radius: 4px;
+	background-color: darkgray;
+}
+
+.file::-webkit-scrollbar-corner {
+	background: transparent;
 }
 
 .file-cont {
@@ -248,15 +263,15 @@ ul.instblock {
 }
 
 p.codehead {
-	background-color: hsla(0, 0%, 40%, 0.9);
+	background-color: hsla(0, 0%, 50%, 0.8);
 	width: calc(100% - 95px);
-	color: hsla(0, 0%, 40%, 0.9);
+	color: black;
 	display: inline-block;
 	margin: 0;
-	padding: 0;
+	padding: 0 6px;
 	border: 1px solid black;
-	border-bottom: none;
-	font-size: 0.85em;
+	font-size: 1.1em;
+	font-family: monospace;
 }
 
 .file-cont p.codehead {
