@@ -37,7 +37,9 @@ footer {text-align: center; color: rgba(100, 100, 100, 1); font-size: 1em; opaci
 
 code, samp, .code {background-color: var(--codeColor); font-size: 1.1em; white-space: nowrap;}
 
-ol li {margin-bottom: 25px}
+ol.lectlist > li {margin-bottom: 40px}
+
+li {margin-bottom: 15px}
 
 i {margin-left: 25px}
 
@@ -70,6 +72,8 @@ footer p {margin-bottom: 7px;}
 	position: absolute;
 	left: calc(50% - var(--baseWidth) / 2 - var(--menuWidth) - 25px);
 }
+
+.menu ul li {margin: 0;}
 
 .menu ul li a {
 	display: block;	
@@ -125,6 +129,7 @@ ul.nav li {
 	float: none;
 	padding: 0px 0;
 	align-self: flex-end;
+	margin: 0;
 }
 
 ul.nav li:last-child a {
@@ -374,12 +379,16 @@ audio::-webkit-media-controls-panel {
 
 #audioNextBtn {margin-right: 8px;}
 
-#trackName {
+.track-name-cont{
 	margin-bottom: 7px;
 	height: 2.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-#audioPlayer {
+#trackName {
+	margin: 0;
 }
 
 /*Next and previous button for lectures*/
@@ -513,7 +522,7 @@ audio::-webkit-media-controls-panel {
 		padding-left: calc(25.5px);
 	}
 
-	code.in, div.in code, div.in{width: calc(100% - 65px)
+	code.in, div.in code, div.in, .file-cont {width: calc(100% - 65px)
 	}
 
 	code.out, p.codehead, pre.out {
