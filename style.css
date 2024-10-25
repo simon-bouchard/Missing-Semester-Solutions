@@ -180,6 +180,17 @@ ul.nav li.nactive a {
 
 .lectlist {margin-right: 5px;}
 
+.inner-list {
+	padding-left: 22.8px;
+	counter-reset: sub;
+	list-style-type: none;
+}
+
+.inner-list li::before {
+	counter-increment: sub;
+	content: "1." counters(sub, ".") "		";
+}
+
 .instblock {margin:20px 0px 40px 20px;}
 
 .inst {
