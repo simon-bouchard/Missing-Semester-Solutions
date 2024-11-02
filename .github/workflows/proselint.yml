@@ -17,4 +17,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Proselint
-      uses: ./github/actions/proselint
+      uses: ./.github/actions/proselint
