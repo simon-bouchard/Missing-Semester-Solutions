@@ -40,7 +40,7 @@ done</pre></div>
 				<div class=code-container><code class="in">shellcheck script.sh</code>
 									<button class="copy">Copy</button></div>
 		Appply the correction to the file:
-		<div class=code-container><div class=file-cont><p class=codehead>boot_time.sh</p><code class=file><pre>
+		<div class=code-container><div class=file-cont><p class=codehead>script.sh</p><code class=file><pre>
 #!/bin/sh
 
 for f in ./*.m3u
@@ -380,7 +380,7 @@ if __name__ == '__main__':
 		<li>A common issue is that a port you want to listen on is already taken by another process. Let’s learn how to discover that process pid. First execute <code>python -m http.server 4444</code> to start a minimal web server listening on port <code>4444</code>. On a separate terminal <code>run lsof | grep LISTEN</code> to print all listening processes and ports. Find that process pid and terminate it by running <code>kill &st;PID&gt;</code>.
 			<div class=inst>
 				You want to look for the PID (second column) of the line ending with <code>*:4444 (LISTEN)</code>
-				<div class=code-container><code class="in">kill &st;PID&gt;</code>
+				<div class=code-container><code class="in">kill &lt;PID&gt;</code>
 										<button class="copy">Copy</button></div>
 				<p class=pinst>To verify if it worked you can run <code>lsof</code> again or verify the first terminal isn't running the webserver anymore.
 		</li>
@@ -394,7 +394,8 @@ if __name__ == '__main__':
 
 				<br>
 				Now, let's do it with cgroups.<br>
-				First, we have to create a cgroup for memory management (you also need to install cgroups with <code>sudo cgcreate -g cpu:/my_cgroup</code>:
+				<br>
+				First, we have to create a cgroup for memory management (you also need to install cgroups with <code>sudo apt install cgroup-tools</code>:
 				<div class=code-container><code class="in">sudo cgcreate -g memory:/my_cgroup</code>
 										<button class="copy">Copy</button></div>
 				Then, we set the memory limit (for this example memory limit will be 100 MB):
