@@ -1,0 +1,17 @@
+name: Proselint Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  proselint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run Proselint
+      uses: ./github/actions/proselint
