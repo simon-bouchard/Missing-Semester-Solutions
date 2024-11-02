@@ -1,4 +1,4 @@
-entrypoint.sh#!/bin/bash
+#!/bin/bash
 set -e
 
 # Run proselint on all .md files
