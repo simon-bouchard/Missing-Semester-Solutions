@@ -340,81 +340,9 @@ The error was using magic numbers
 		<span class=tooltipText>Next lecture</span></div>
 </div>
 
-<script>
-
-const lectureList = [ 
-		{lect: 'lect1'},
-		{lect: 'lect2'},
-		{lect: 'lect3'},
-		{lect: 'lect4'},
-		{lect: 'lect5'},
-		{lect: 'lect6'},
-		{lect: 'lect7'},
-		{lect: 'lect8'},
-		{lect: 'lect9'},
-		{lect: 'lect10'}
-];
-
-let lecture;
-
-/*To recieve lecture num from parent page*/
-window.addEventListener('message', (event) => {
-	lecture = lectureList.findIndex(item => item.lect === event.data);
-});
-
-/*To send new lecture ref to the parent page*/
-function loadLecture(lecture) {
-	window.parent.postMessage(lectureList[lecture], '*');
-}
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-		lecture = (lecture - 1 + lectureList.length) % lectureList.length;
-		loadLecture(lecture);
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-		lecture = (lecture + 1) % lectureList.length;
-		loadLecture(lecture);
-});
-
-</script>
+<script src='../js/lectureNav.js'></script>
 		
-<script>
-
-/*Add copy button */
-document.querySelectorAll('.code-container button.copy').forEach(button => {
-  button.addEventListener("click", function() {
-    const code = this.previousElementSibling.textContent;
-
-    navigator.clipboard.writeText(code).then(() => {
-      this.textContent = "Copied";
-      this.classList.add("copied");
-      
-      setTimeout(() => {
-        this.textContent = "Copy";
-        this.classList.remove("copied");
-      }, 2000);
-    }).catch(err => {
-      console.error("failed to copy text: ", err);
-    });
-  });
-});
-
-
-/*Make copy button apear on hover*/
-const codeBlocks = document.querySelectorAll('div.code-container');
-
-codeBlocks.forEach(function(code) {
-  code.addEventListener('mouseover', function() {
-    code.lastElementChild.classList.add('display');
-  });
-
-  code.addEventListener('mouseout', function() {
-    code.lastElementChild.classList.remove('display');
-  });
-});
-
-</script>
+<script src='../js/copyButton.js'></script>
 
 </body>
 </html>

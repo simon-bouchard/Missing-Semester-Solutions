@@ -74,71 +74,6 @@
 
 </div>
 
-<script>
-
-	const playlist = [
-			{name: 'This is how it feels when the code finally works', src: 'fire/Bliss.mp3'},
-			{name: 'Back again', src: 'fire/Back again.mp3'},
-			{name: 'Brizzy', src: 'fire/brizzy.mp3'},
-			{name: '', src: 'fire/155 oui.mp3'},
-			{name: 'This is how I felt when doing the exercises', src: 'fire/She be.mp3'},
-			{name: '', src: 'fire/fcked.mp3'},
-			{name: '', src: 'fire/Sylvestre.mp3'},
-			{name: "I do not own the rights to the original so please don't listen to it too much", src: 'fire/Mr Wilson.mp3'},
-			{name: '', src: 'fire/Not it.mp3'},
-			{name: '', src: 'fire/sea.mp3'},
-			{name: 'I made this one just for you', src: 'fire/Mello.mp3'},
-			{name: '', src: 'fire/sai.mp3'},
-			{name: 'Rain cookies', src: 'fire/rain cookies.mp3'},
-			{name: '', src: 'fire/Xmas blue.mp3'},
-			{name: '', src: 'fire/Burt.mp3'},
-			{name: '', src: "fire/fifi brin d'acier.mp3"},
-			{name: 'space milk', src: 'fire/space milk.mp3'},
-			{name: '', src: 'fire/That thangggg.mp3'},
-			{name: '', src: 'fire/back pain.mp3'},
-			{name: '', src: 'fire/finess.mp3'},
-			{name: '', src: 'fire/That thang.mp3'},
-			{name: '', src: 'fire/Mk Ultra.mp3'},
-			{name: '', src: 'fire/No relief.mp3'},
-			{name: '', src: 'fire/Dead Star.mp3'},
-			{name: '', src: 'fire/lost Aminor 154 bpm.mp3'},
-			{name: "I do not own the rights to the original so please don't listen to it too much", src: 'fire/Juliet.mp3'},
-			{name: '', src: 'fire/Finally.mp3'},
-	];
-
-	let currentTrack = 0;
-
-	const audioPlayer = document.getElementById('audioPlayer');
-	const trackName = document.getElementById('trackName');
-
-	function loadTrack(index) {
-		audioPlayer.src = playlist[index].src;
-
-		if (playlist[index].name) {
-			trackName.textContent = playlist[index].name
-		} else {
-			trackName.textContent = "Here are some beats to help you relax while you do the exercises"
-		}
-		
-		audioPlayer.play()
-	}
-
-	document.getElementById('audioNextBtn').addEventListener('click', () => {
-		currentTrack = (currentTrack + 1) % playlist.length;
-		loadTrack(currentTrack);
-	});
-
-	document.getElementById('audioPrevBtn').addEventListener('click', () => {
-		currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
-		loadTrack(currentTrack);
-	});
-
-	audioPlayer.addEventListener('ended', () => {
-		currentTrack = (currentTrack + 1) % playlist.length;
-		loadTrack(currentTrack);
-	});
-
-</script>
 
 <hr class="solid" width=750px>
 
@@ -148,55 +83,14 @@
 	<p>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions" target="_blank">here</a>.</p>
 </footer>
 
-<script>
 
-/*For next and prev buttons in lecture page*/
-	/*To send the current lecture id to the lecture page*/
-	const iframe = document.getElementById('exo');
-	const buttons = document.querySelectorAll('div.menu ul li');
-	
-	buttons.forEach(function(button) {
-		button.addEventListener('click', (event) => {
-			const clickedId = event.target.id;
-				
-			iframe.addEventListener('load', () => {
-				iframe.contentWindow.postMessage(clickedId, '*');
-			});
-		});
-	});
+<script src='js/audioPlayer.js'></script>
 
-	/*To change the lecture*/
-window.addEventListener('message', (event) => {
-		if(event.data.lect) {
-			const lectNum = event.data.lect;
-			
-			document.getElementById(lectNum).click();
-		};
-});
+<script src='js/lectureNavParentPage.js'></script>
 
-/* to add active and visited classes*/
-buttons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    buttons.forEach(function(btn) {
-      btn.classList.remove('active'); 
-    });
+<script src='js/activeSideMenu.js'></script>
 
-    button.classList.add('active', 'visited');
-  });
-});
-
-/*To load lecture from index page*/
-const params = new URLSearchParams(window.location.search);
-
-if (params.has('link')) {
-  const link = params.get('link');
-
-  document.getElementById(link).click();
-  
-  iframe.scrollIntoView({ behavior: 'smooth' });
-}
-
-</script>
+<script src='js/lectureReceive.js'></script>
 
 </body>
 </html>
