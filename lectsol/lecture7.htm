@@ -92,6 +92,261 @@ if __name__ == "__main__":
 	<h5>Profiling</h5>
 
 		<li><a href='../files/sorts.py'>Here</a> are some sorting algorithm implementations. Use <code><a href='https://docs.python.org/3/library/profile.html' target=_blank>cProfile</a></code> and <a href='https://github.com/pyutils/line_profiler' target=_blank><code>line_profiler</code></a> to compare the runtime of insertion sort and quicksort. What is the bottleneck of each algorithm? Use then <code>memory_profiler</code> to check the memory consumption, why is insertion sort better? Check now the inplace version of quicksort. Challenge: Use <code>perf</code> to look at the cycle counts and cache hits and misses of each algorithm.
+			<div class=instblock>
+				<ol>
+					<li>First, let's compare the sorting algorythms with a script using cProfile:
+					<div class=code-container><div class=file-cont><p class=codehead>cProfile_sorts.py</p><code class=file><pre>
+import random
+import cProfile
+from sorts import insertionsort, quicksort, quicksort_inplace
+
+# Generate a test array
+arr = [random.randint(0, 1000) for _ in range(1000)]
+
+# Profile Insertion Sort
+print("Profiling Insertion Sort:")
+cProfile.run('insertionsort(arr.copy())')
+
+# Profile Quicksort (Non-In-Place)
+print("\nProfiling Quicksort:")
+cProfile.run('quicksort(arr.copy())')
+
+# Profile In-Place Quicksort
+print("\nProfiling In-Place Quicksort:")
+cProfile.run('quicksort_inplace(arr.copy())')</pre></code></div>
+							<button class=copy>Copy</button></div>
+					Then, run the python script:
+						<div class=code-container><code class="in">python cProfile_sorts.py</code>
+							<button class="copy">Copy</button></div>
+						<p class=codehead>Terminal Output:</p><code class=out><pre>
+Profiling Insertion Sort:
+         6 function calls in 0.021 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.021    0.021 <string>:1(<module>)
+        1    0.021    0.021    0.021    0.021 sorts.py:10(insertionsort)
+        1    0.000    0.000    0.021    0.021 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+
+Profiling Quicksort:
+         4038 function calls (2694 primitive calls) in 0.003 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.003    0.003 <string>:1(<module>)
+   1345/1    0.001    0.000    0.003    0.003 sorts.py:22(quicksort)
+      672    0.001    0.000    0.001    0.000 sorts.py:26(<listcomp>)
+      672    0.001    0.000    0.001    0.000 sorts.py:27(<listcomp>)
+        1    0.000    0.000    0.003    0.003 {built-in method builtins.exec}
+     1345    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+
+Profiling In-Place Quicksort:
+         2731 function calls (1369 primitive calls) in 0.002 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.002    0.002 <string>:1(<module>)
+   1363/1    0.002    0.000    0.002    0.002 sorts.py:31(quicksort_inplace)
+        1    0.000    0.000    0.002    0.002 {built-in method builtins.exec}
+     1364    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'copy' of 'list' objects}
+		1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}</pre></code>
+					</li>
+					<li>
+						Now let's do it with line profiler:
+						<br>You first have to download it with pip (you also have to install pip if you don't already have it).
+						<div class=code-container><code class="in">pip install line_profiler</code>
+							<button class="copy">Copy</button></div>
+						Then, add the <code>@profile tag</code> before each sort function in sort.py and run:
+						<div class=code-container><code class="in">kernprof -l -v profile_sorts.py</code>
+							<button class="copy">Copy</button></div>
+						<p class=codehead>Terminal Output</p><code class=out><pre>
+Wrote profile results to profile_sorts.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 0.119793 s
+File: profile_sorts.py
+Function: insertionsort at line 10
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    10                                           @profile
+    11                                           def insertionsort(array):
+    12                                           
+    13     25031       3564.2      0.1      3.0      for i in range(len(array)):
+    14     24031       3692.1      0.2      3.1          j = i-1
+    15     24031       3597.3      0.1      3.0          v = array[i]
+    16    216315      42516.8      0.2     35.5          while j >= 0 and v < array[j]:
+    17    192284      35396.7      0.2     29.5              array[j+1] = array[j]
+    18    192284      26149.8      0.1     21.8              j -= 1
+    19     24031       4739.3      0.2      4.0          array[j+1] = v
+    20      1000        137.0      0.1      0.1      return array
+
+Total time: 0.0660519 s
+File: profile_sorts.py
+Function: quicksort at line 22
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    22                                           @profile
+    23                                           def quicksort(array):
+    24     33902       6482.3      0.2      9.8      if len(array) <= 1:
+    25     17451       1815.8      0.1      2.7          return array
+    26     16451       2439.0      0.1      3.7      pivot = array[0]
+    27     16451      20909.7      1.3     31.7      left = [i for i in array[1:] if i < pivot]
+    28     16451      21577.2      1.3     32.7      right = [i for i in array[1:] if i >= pivot]
+    29     16451      12827.9      0.8     19.4      return quicksort(left) + [pivot] + quicksort(right)
+
+Total time: 0.120434 s
+File: profile_sorts.py
+Function: quicksort_inplace at line 31
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    31                                           @profile
+    32                                           def quicksort_inplace(array, low=0, high=None):
+    33     34724       7101.9      0.2      5.9      if len(array) <= 1:
+    34        37          4.3      0.1      0.0          return array
+    35     34687       5003.9      0.1      4.2      if high is None:
+    36       963        215.8      0.2      0.2          high = len(array)-1
+    37     34687       5214.4      0.2      4.3      if low >= high:
+    38     17825       2099.9      0.1      1.7          return array
+    39                                           
+    40     16862       2636.9      0.2      2.2      pivot = array[high]
+    41     16862       2858.2      0.2      2.4      j = low-1
+    42    129258      19442.6      0.2     16.1      for i in range(low, high):
+    43    112396      18884.6      0.2     15.7          if array[i] <= pivot:
+    44     58913       8311.2      0.1      6.9              j += 1
+    45     58913      14901.1      0.3     12.4              array[i], array[j] = array[j], array[i]
+    46     16862       5175.5      0.3      4.3      array[high], array[j+1] = array[j+1], array[high]
+    47     16862      14069.0      0.8     11.7      quicksort_inplace(array, low, j)
+    48     16862      12809.7      0.8     10.6      quicksort_inplace(array, j+2, high)
+    49     16862       1704.8      0.1      1.4      return array
+									</pre></code>
+									<p class=pinst>We can see <code>quicksort</code> is faster than insertionsort. The bottleneck of <code>insertionsort</code> is the while loop and the <code>left = ...</code> line for <code>quicksort</code></p>
+								</li>
+
+								<li>Now, let's analyze the algorythms with memory_profiler.
+									<br>We first need to install <code>memory_profiler</code> and make sure each function in sorts.py starts with the @profile tag.
+									<div class=code-container><code class="in">pip install memory</code>
+										<button class="copy">Copy</button></div>
+									Then, run:
+									<div class=code-container><code class="in">python -m memory_profiler profile_sorts.py</code>
+										<button class="copy">Copy</button></div>
+									<p class=codehead>Terminal Output</p><code class=out><pre>
+Filename: profile_sorts.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    10   19.871 MiB   19.871 MiB        1000   @profile
+    11                                         def insertionsort(array):
+    12                                         
+    13   19.871 MiB    0.000 MiB       25738       for i in range(len(array)):
+    14   19.871 MiB    0.000 MiB       24738           j = i-1
+    15   19.871 MiB    0.000 MiB       24738           v = array[i]
+    16   19.871 MiB    0.000 MiB      223306           while j >= 0 and v < array[j]:
+    17   19.871 MiB    0.000 MiB      198568               array[j+1] = array[j]
+    18   19.871 MiB    0.000 MiB      198568               j -= 1
+    19   19.871 MiB    0.000 MiB       24738           array[j+1] = v
+    20   19.871 MiB    0.000 MiB        1000       return array
+
+
+Filename: profile_sorts.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    22   19.871 MiB   19.871 MiB       33780   @profile
+    23                                         def quicksort(array):
+    24   19.871 MiB    0.000 MiB       33780       if len(array) <= 1:
+    25   19.871 MiB    0.000 MiB       17390           return array
+    26   19.871 MiB    0.000 MiB       16390       pivot = array[0]
+    27   19.871 MiB    0.000 MiB      156536       left = [i for i in array[1:] if i < pivot]
+    28   19.871 MiB    0.000 MiB      156536       right = [i for i in array[1:] if i >= pivot]
+    29   19.871 MiB    0.000 MiB       16390       return quicksort(left) + [pivot] + quicksort(right)
+
+
+Filename: profile_sorts.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    31   19.871 MiB   19.871 MiB       33808   @profile
+    32                                         def quicksort_inplace(array, low=0, high=None):
+    33   19.871 MiB    0.000 MiB       33808       if len(array) <= 1:
+    34   19.871 MiB    0.000 MiB          40           return array
+    35   19.871 MiB    0.000 MiB       33768       if high is None:
+    36   19.871 MiB    0.000 MiB         960           high = len(array)-1
+    37   19.871 MiB    0.000 MiB       33768       if low >= high:
+    38   19.871 MiB    0.000 MiB       17364           return array
+    39                                         
+    40   19.871 MiB    0.000 MiB       16404       pivot = array[high]
+    41   19.871 MiB    0.000 MiB       16404       j = low-1
+    42   19.871 MiB    0.000 MiB      125558       for i in range(low, high):
+    43   19.871 MiB    0.000 MiB      109154           if array[i] <= pivot:
+    44   19.871 MiB    0.000 MiB       56761               j += 1
+    45   19.871 MiB    0.000 MiB       56761               array[i], array[j] = array[j], array[i]
+    46   19.871 MiB    0.000 MiB       16404       array[high], array[j+1] = array[j+1], array[high]
+    47   19.871 MiB    0.000 MiB       16404       quicksort_inplace(array, low, j)
+    48   19.871 MiB    0.000 MiB       16404       quicksort_inplace(array, j+2, high)
+    49   19.871 MiB    0.000 MiB       16404       return array
+										</pre></code>
+										<div class=pinst>
+											<p>Insertion Sort: Minimal memory usage; memory should remain constant as it’s an in-place algorithm.</p>
+											<p>Non-In-Place Quicksort: Likely shows increased memory usage due to list slicing, which creates new lists at each recursive call.</p>
+											<p>In-Place Quicksort: Similar to insertion sort in memory efficiency, as it only works within the original list.</p>
+										</div>
+									</li>
+									
+									<li>Now let's use perf to look at the cycle count and the hits and misses of each algorythm.
+										<br>Wsl doesn't support kernel features like perf but you can still do it with a vm.
+										<br><br>First, let's install <code>Perf</code> with:
+										<div class=code-container><code class="in">sudo apt install linux-tools-common linux-tools-generic linux-tools-$(uname -r)</code>
+										<button class="copy">Copy</button></div>
+
+										Then create a new file to call each function separately (This script also generate an array of 10 000 random number to highlight the differences):
+										<div class=code-container><div class=file-cont><p class=codehead>cProfile_sorts.py</p><code class=file><pre>
+# profile_sorts_perf.py
+
+import random
+from sorts import insertion_sort, quicksort, quicksort_inplace
+
+# Generate a large test array
+arr = [random.randint(0, 1000) for _ in range(10000)]
+
+def run_insertion_sort():
+    insertion_sort(arr.copy())
+
+def run_quicksort():
+    quicksort(arr.copy())
+
+def run_quicksort_inplace():
+    quicksort_inplace(arr.copy())</pre></code></div>
+									<button class=copy>Copy</button></div>
+										Then run perf for each function (change the quoted part accordingly):
+									<div class=code-container><code class="in">perf stat -e cycles,cache-references,cache-misses python -c "from profile_sorts import run_insertion_sort; run_insertion_sort()"</code>
+										<button class="copy">Copy</button></div>
+									<p class=codehead>Terminal Output:</p><code class=out><pre>
+Performance counter stats for 'python -c "from profile_sorts import run_insertion_sort; run_insertion_sort()"':
+   
+           500,000      cycles                    # Total CPU cycles
+           250,000      cache-references          # Cache references
+            50,000      cache-misses              # Cache misses
+									</pre></code>
+
+					</li>
+				</ol>
+			</div>
 		</li>
 
 		<li><p>Here’s some (arguably convoluted) Python code for computing Fibonacci numbers using a function for each number.</p>
@@ -110,80 +365,55 @@ if __name__ == '__main__':
     # for n in range(10):
     #     exec("fib{} = lru_cache(1)(fib{})".format(n, n))
     print(eval("fib9()"))</pre></div>
-				<p>Put the code into a file and make it executable. Install prerequisites: <code><a href='https://lewiscowles1986.github.io/py-call-graph/' target=_blank>pycallgraph</a></code> and <a href='https://graphviz.org/' target=_blank>graphviz</a></code>. (If you can run <code>dot</code>, you already have GraphViz.) Run the code as is with <code>pycallgraph graphviz -- ./fib.py</code> and check the <code>pycallgraph.png</code> file. How many times is <code>fib0</code> called?. We can do better than that by memoizing the functions. Uncomment the commented lines and regenerate the images. How many times are we calling each <code>fibN</code> function now?</p>
+				<p>Put the code into a file and make it executable. Install prerequisites: <code><a href='https://lewiscowles1986.github.io/py-call-graph/' target=_blank>pycallgraph</a></code> and <a href='https://graphviz.org/' target=_blank>graphviz</a></code>. (If you can run <code>dot</code>, you already have GraphViz.) Run the code as is with <code>pycallgraph graphviz -- ./fib.py</code> and check the <code>pycallgraph.png</code> file. How many times is <code>fib0</code> called?. We can do better than that by memorizing the functions. Uncomment the commented lines and regenerate the images. How many times are we calling each <code>fibN</code> function now?</p>
+				<div class=inst>
+					Install the prerequisites with:
+					<div class=code-container><code class="in">pip install pycallgraph graphviz</code>
+										<button class="copy">Copy</button></div>
+					Run the script with:
+					<div class=code-container><code class="in">pycallgraph graphviz -- ./fib.py</code>
+										<button class="copy">Copy</button></div>
+					<code>fib0</code> is called 21 times. If we uncomment the lines related to <code>lru_cache</code> and rerun the code above, we get one call for <code>fib0</code> and other <code>fibN</code>, but <code>module</code> gets called 20 times instead of 10.
+				</div>
 		</li>
 
 		<li>A common issue is that a port you want to listen on is already taken by another process. Let’s learn how to discover that process pid. First execute <code>python -m http.server 4444</code> to start a minimal web server listening on port <code>4444</code>. On a separate terminal <code>run lsof | grep LISTEN</code> to print all listening processes and ports. Find that process pid and terminate it by running <code>kill &st;PID&gt;</code>.
+			<div class=inst>
+				You want to look for the PID (second column) of the line ending with <code>*:4444 (LISTEN)</code>
+				<div class=code-container><code class="in">kill &st;PID&gt;</code>
+										<button class="copy">Copy</button></div>
+				<p class=pinst>To verify if it worked you can run <code>lsof</code> again or verify the first terminal isn't running the webserver anymore.
 		</li>
 
 		<li>Limiting a process’s resources can be another handy tool in your toolbox. Try running <code>stress -c 3</code> and visualize the CPU consumption with <code>htop</code>. Now, execute <code>taskset --cpu-list 0,2 stress -c 3</code> and visualize it. Is stress taking three CPUs? Why not? Read <code><a href='https://www.man7.org/linux/man-pages/man1/taskset.1.html' target=_blank>man taskset</a></code>. Challenge: achieve the same using <code><a href='https://www.man7.org/linux/man-pages/man7/cgroups.7.html' target=_blank>cgroups</a></code>. Try limiting the memory consumption of <code>stress -m</code>.
+			<div class=inst>
+				<p>Install both <code>stress</code> and <code>htop</code></p>
+				<p>Now run <code>stress -c 3</code> and <code>htop</code> on different terminal (you can stop the stress command with Ctrl-c).<br>
+				You should see that <code>stress</code> takes three cpu.</p>
+				<p>Now, run <code>taskset --cpu-list 0,2 stress -c 3</code>. With <code>htop</code> we can see that <code>stress</code> now only takes two cpu (0 and 2). This is because we specified the cpu allowed with <code>taskset</code>.</p>
+
+				<br>
+				Now, let's do it with cgroups.<br>
+				First, we have to create a cgroup for memory management (you also need to install cgroups with <code>sudo cgcreate -g cpu:/my_cgroup</code>:
+				<div class=code-container><code class="in">sudo cgcreate -g memory:/my_cgroup</code>
+										<button class="copy">Copy</button></div>
+				Then, we set the memory limit (for this example memory limit will be 100 MB):
+				<div class=code-container><code class="in">echo 100M | sudo tee /my_cgroup/memory.limit_in_bytes</code>
+										<button class="copy">Copy</button></div>
+				Finally, we can run the <code>stress</code> command (<code>--vm-bytes 128M</code> will attempt to use 128 MB):
+				<div class=code-container><code class="in">sudo cgexec -g memory:my_cgroup stress -m 1 --vm-bytes 128M</code>
+										<button class="copy">Copy</button></div>
+				We can verify if it worked using htop (it should only use 100 MB of memory because of the cgroup).
+
 		</li>
 
 		<li>(Advanced) The command <code>curl ipinfo.io</code> performs a HTTP request and fetches information about your public IP. Open <a href='https://www.wireshark.org/' target=_blank>Wireshark</a> and try to sniff the request and reply packets that <code>curl</code> sent and received. (Hint: Use the <code>http</code> filter to just watch HTTP packets).
-		</li>
-
-
-
-
-
-
-		<li>One common mistake when learning Git is to commit large files that should not be managed by Git or adding sensitive information. Try adding a file to a repository, making some commits and then deleting that file from history (you may want to look at <a herf='https://docs.github.com/fr/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository' target=_blank>this</a>).
-			<div class=inst><div class=code-container><code class="in">bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA</code>
-									<button class="copy">Copy</button></div>
-				If you also want to clean the remote repository:
-			<div class=code-container><code class="in">git push --force</code>
-				<button class="copy">Copy</button></div></div>
-		</li>
-
-		<li>Clone some repository from GitHub, and modify one of its existing files. What happens when you do <code>git stash</code>? What do you see when running <code>git log --all --oneline</code>? Run <code>git stash pop</code> to undo what you did with <code>git stash</code>. In what scenario might this be useful?
 			<div class=inst>
-				Running git stash stores the modifications you made and reverts the working directory to the latest commit (no change). <code>git log --all --oneline</code> Won't show the stashed changes because they are stored seperately. <code>git stash pop</code> will revert the working tree back to before <code>git stash</code>.<br>
-				This is useful to quickly see what changes you made since the last commit and to write the right commit message. Also it allows you to change branches without having to commit your work or to pull new changes from remote repository without conflictig with local changes.
-			</div>
-		</li>
-
-		<li>Like many command line tools, Git provides a configuration file (or dotfile) called <code>~/.gitconfig</code>. Create an alias in <code>~/.gitconfig</code> so that when you run git graph, you get the output of <code>git log --all --graph --decorate --oneline</code>. You can do this by directly <a href='https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias' target=_blank>editing</a> the <code>~/.gitconfig</code> file, or you can use the <code>git config</code> command to add the alias. Information about git aliases can be found <a href='https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases' target=_blank>here</a>.
-			<div class=inst>
-				<div class=code-container><code class="in">vim ~/.gitconfig</code>
-				<button class="copy">Copy</button></div>
-				<div class=code-container><div class=file-cont><p class=codehead>boot_time.sh</p><code class=file><pre>
-[alias]
-	graph = log --all --graph --decorate --online
-						</pre></code></div>
-					<button class=copy>Copy</button></div></div>
-		</li>
-
-		<li>You can define global ignore patterns in <code>~/.gitignore_global</code> after running <code>git config --global core.excludesfile ~/.gitignore_global</code>. Do this, and set up your global gitignore file to ignore OS-specific or editor-specific temporary files, like <code>.DS_Store</code>.
-			<div class=inst>
-				Here are some examples of files you might want to ignore:
-				<div class=code-container><div class=file-cont><p class=codehead>gitignore_globa</p><code class=file><pre>
-# Ignore zone identifier files (WSL)
-*Zone.Identifier
-
-# Ignore vim swap and backup files
-*.swp
-*.swo
-*.swn
-
-*.bak
-*.backup
-
-# Sensitive SSH and GPG files
-.ssh/
-id_rsa
-id_rsa.pub
-known_hosts
-
-.gnupg/						</pre></code></div>
-					<button class=copy>Copy</button></div></div>
-		</li>
-
-		<li>Fork the repository for the class website, find a typo or some other improvement you can make, and submit a pull request on GitHub (you may want to look at <a href='https://github.com/firstcontributions/first-contributions'>this</a>). Please only submit PRs that are useful (don’t spam us, please!). If you can’t find an improvement to make, you can skip this exercise.
-			<div class=inst><p>The class website has few improvements left to make so you can do this exercise with <a href='https://github.com/simon-bouchard/simon-bouchard.github.io' target=_blank>this website's repository</a> (the site you are currently on). <br>
-				This site still has a lot of improvements to make so you don't have any excuse to skip this exercise. This will also give you an opportunity to practice vim.</p>
-				<p>If you don't know what to do, you can make the the html files xhtml compatible (especially quotations), add/remove whitespace (both in the files and the website) and add comments to make it more readable, rephrase some of the text so it doesn't look like I was having a stroke when writing it (English is my second language) or add explanations to the exercises I was to lazy to explain completely.</p>
-				If I accept your changes, you will also be granted the enormous honor of having your name listed in the contributions section from the about page no one ever looks at!
-			</div>
+				<p>After installing wireshark you can open it by typing <code>wireshark</code> in the terminal</p>
+				<p>Then, select the correct network interface (one where there is traffic, can be 'any' if you don't know).<br>
+				You can filter out non-http request by adding an http filter.</p>
+				<p>In a separate terminal window, run <code>curl ipinfo.io</code>.<br>
+				You should see the packets capture in wireshark. You can recognize the request by the <code>GET</code> method specified in the info section and the response with Status code (200) and information in JSON format.</p>
 		</li>
 
 	</ol>
@@ -193,88 +423,18 @@ known_hosts
 <div class=navBtn>
 	<div class=tooltip>
 		<img src="../images/next.png" id=prevBtn>
-		<span class=tooltipText>Previous lecture</span></div>
+		<span class=tooltipText>Previous lecture</span>
+	</div>
 
 	<div class='tooltip right'>
 		<img src="../images/next.png" id=nextBtn>
-		<span class=tooltipText>Next lecture</span></div>
+		<span class=tooltipText>Next lecture</span>
+	</div>
 </div>
 
-<script>
-
-const lectureList = [ 
-		{lect: 'lect1'},
-		{lect: 'lect2'},
-		{lect: 'lect3'},
-		{lect: 'lect4'},
-		{lect: 'lect5'},
-		{lect: 'lect6'},
-		{lect: 'lect7'},
-		{lect: 'lect8'},
-		{lect: 'lect9'},
-		{lect: 'lect10'}
-];
-
-let lecture;
-
-/*To recieve lecture num from parent page*/
-window.addEventListener('message', (event) => {
-	lecture = lectureList.findIndex(item => item.lect === event.data);
-});
-
-/*To send new lecture ref to the parent page*/
-function loadLecture(lecture) {
-	window.parent.postMessage(lectureList[lecture], '*');
-}
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-		lecture = (lecture - 1 + lectureList.length) % lectureList.length;
-		loadLecture(lecture);
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-		lecture = (lecture + 1) % lectureList.length;
-		loadLecture(lecture);
-});
-
-</script>
+<script src='../js/lectureNav.js'></script>
 		
-<script>
-
-/*Add copy button */
-document.querySelectorAll('.code-container button.copy').forEach(button => {
-  button.addEventListener("click", function() {
-    const code = this.previousElementSibling.textContent;
-
-    navigator.clipboard.writeText(code).then(() => {
-      this.textContent = "Copied";
-      this.classList.add("copied");
-      
-      setTimeout(() => {
-        this.textContent = "Copy";
-        this.classList.remove("copied");
-      }, 2000);
-    }).catch(err => {
-      console.error("failed to copy text: ", err);
-    });
-  });
-});
-
-
-/*Make copy button apear on hover*/
-const codeBlocks = document.querySelectorAll('div.code-container');
-
-codeBlocks.forEach(function(code) {
-  code.addEventListener('mouseover', function() {
-    code.lastElementChild.classList.add('display');
-  });
-
-  code.addEventListener('mouseout', function() {
-    code.lastElementChild.classList.remove('display');
-  });
-});
-
-</script>
+<script src='../js/copyButton.js'></script>
 
 </body>
 </html>
