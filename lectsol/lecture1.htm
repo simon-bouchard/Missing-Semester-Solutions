@@ -21,7 +21,7 @@
 				<div class="code-container"><code class=in>wsl --install</code>
 						<button class="copy">copy</button>
 </div>
-<p><i> Note: this is the only time you will be using powershell!</i></p></div></div>
+<p><i> Note: this is the only time you will be using powershell</i></p></div></div>
 
 			<p>To make sure you’re running an appropriate shell, you can try the command <span><code>echo $SHELL</code></span>. If it says something like <span><samp>/bin/bash</samp></span> or <span><samp>/usr/bin/zsh</samp></span>, that means you’re running the right program. </p>
 			<div class=instblock>
@@ -29,6 +29,7 @@
 				<ol>	<li>To update your package repository:
 					<div class=code-container><div class="in"><code>sudo apt update</code></div>
 					<button class="copy">Copy</button</button></li>
+					<p><i>Note: package update won't be mentionned from now on</i></p>
 					<li>To install zsh:
 						<div class=code-container><div class="in"><code>sudo apt install zsh -y</code></div>
 						<button class="copy">Copy</button></div>
@@ -72,7 +73,8 @@
 						<li><div class=code-container>
 							<code class=in>echo 'curl --head --silent https://missing.csail.mit.edu' &gt;&gt; semester</code>
 							<button class="copy">Copy</button></div>
-							<p class=pinst>Make sure you are in the correct directory. Otherwise, naviguate to the correct directory with <code>cd /tmp/missing/semester</code> or use an absilute reference for the code above. ex: <code>echo '#!/bin/sh' &gt; /tmp/missing/semester</code>.<br><i>Note: <code>&gt;</code> rewrites the file while <code>&gt;&gt;</code> add the string to the end of the file.</i></p</li>>
+							<p class=pinst>Make sure you are in the correct directory. Otherwise, naviguate to the correct directory with <code>cd /tmp/missing/semester</code> or use an absolute reference for the code above. ex: <code>echo '#!/bin/sh' &gt; /tmp/missing/semester</code>.</p>
+							<p class=pinst><i>Note: <code>&gt;</code> rewrites the file while <code>&gt;&gt;</code> add the string to the end of the file.</i></p></li>
 					</ol>
 
 				</div>
@@ -118,7 +120,7 @@ x-timer: S1726894882.484443,VS0,VE27
 vary: Accept-Encoding
 x-fastly-request-id: 65ccdb2c25c249620614e7e7db2df9a2b545f6ea
 content-length: 8285</code></pre>
-						<p class=pinst>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked already is already executable and running so the script only needs to have read permissions.</p></li>
+						<p class=pinst>The <code>sh</code> command is used to invoke a shell. It then reads the content of the file and executes it. The shell invoked is already executable and running so the script only needs to have read permissions.</p></li>
 					</ol>
 			</li>
 

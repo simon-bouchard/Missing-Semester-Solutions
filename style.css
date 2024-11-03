@@ -191,6 +191,8 @@ ul.nav li.nactive a {
 	content: "1." counters(sub, ".") "	";
 }
 
+.inner-list div.inst {margin-left: 37.2px}
+
 .instblock {margin:20px 0px 40px 20px;}
 
 .inst {
