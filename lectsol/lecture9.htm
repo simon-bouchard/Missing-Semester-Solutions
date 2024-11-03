@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class=lecture>
 
 	<h3><a href="https://missing.csail.mit.edu/2020/security/" target="_blank">Lecture 9</a></h3>
 	<ol class=lectlist>
 		<li><h6>Entropy</h6>
-			<ol>
+			<ol class=inner-list>
 				<li>Suppose a password is chosen as a concatenation of four lower-case dictionary words, where each word is selected uniformly at random from a dictionary of size 100,000. An example of such a password is <code>correcthorsebatterystaple</code>. How many bits of entropy does this have?
 					<div class=sub-inst>
 						If we assume the way to generate the password is known publicly, there are 10 000^4 = 10^20 combinations possible. Since the entropy is of a password is equal to the logarythm base two of the number of possibilities, we can see that this password generator has log<sub>2</sub>(10<sup>20</sup>) = 66.44 bits of entropy.
@@ -90,9 +90,9 @@
 		</li>
 
 		<li><h6>Asymetric cryptography</h6>
-			<ol class=inner-list>
+			<ol class=inner-inst>
 				<li>Set up <a href='https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2' target=_blank>SSH keys</a> on a computer you have access to (not Athena, because Kerberos interacts weirdly with SSH keys). Make sure your private key is encrypted with a passphrase, so it is protected at rest.
-					<div class=>
+					<div class=sub-inst>
 						<div class=code-container><code class="in">ssh-keygen -t ed2551</code>
 							<button class="copy">Copy</button></div>					
 						<p>Be sure to enter a passphrase when prompted and don't write it down on your computer.</p>
@@ -100,18 +100,18 @@
 				</li>
 
 				<li><a href='https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages' target=_blank>Set up GPG</a>
-					<div class=>Follow the tutorial linked in the lecture.</div>
+					<div class=sub-inst>Follow the tutorial linked in the lecture.</div>
 				</li>
 				
 				<li>Send Anish an encrypted email (<a href='https://keybase.io/anish' target=_blank>Public key</a>).
-					<div class=>You can encrypt a file you for someone if you already have their public keys configured:
+					<div class=sub-inst>You can encrypt a file you for someone if you already have their public keys configured:
 						<div class=code-container><code class="in">gpg --encrypt --sign --armor -r person@email.com file_to_encrypt</code>
 							<button class="copy">Copy</button></div>
 
 				</li>
 
 				<li>Sign a Git commit with <code>git commit -S</code> or create a signed Git tag with <code>git tag -s</code>. Verify the signature on the commit with <code>git show --show-signature</code> or on the tag with <code>git tag -v</code>.
-					<div class=>Configure git to use your GPG key (replace <code>ABCDEF1234567890</code> with your key ID and replace <code>user</code> with your git username if it's still not configured)
+					<div class=sub-inst>Configure git to use your GPG key (replace <code>ABCDEF1234567890</code> with your key ID and replace <code>user</code> with your git username if it's still not configured)
 						<div class=code-container><code class="in">git config --global user.signingkey ABCDEF1234567890</code>
 							<button class="copy">Copy</button></div>										
 						Sign a git commit:

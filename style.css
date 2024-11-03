@@ -6,7 +6,7 @@
 	--gray: hsla(0, 0%, 70%, 0.5);
 	--lightGray: hsla(0, 0%, 90%, 0.3);
 	--darkGray: hsla(0, 0%, 50%, 0.5);
-	--codeColor: hsla(0, 0%, 86%, 0.3);
+	--codeColor: hsla(0, 0%, 86%, 0.4);
 	--baseWidth: 750px;
 	--menuWidth: 140px;
 }
@@ -35,7 +35,7 @@ p {font-size: 1em}
 
 footer {text-align: center; color: rgba(100, 100, 100, 1); font-size: 1em; opacity: 0.8; margin-bottom: 20px;}
 
-code, samp, .code {background-color: var(--codeColor); font-size: 1.1em; white-space: nowrap;}
+code, samp, .code {background-color: var(--codeColor); font-size: 1.1em; border-radius: 2.5px;}
 
 ol.lectlist > li {margin-bottom: 40px}
 
@@ -143,6 +143,7 @@ ul.nav li a {
 	padding: 13px 13px 10px;
 	text-decoration: none;
 	font-size: 1.14em;
+	width:120px;
 	/*border-right: 2px solid white;*/
 }
 
@@ -164,7 +165,7 @@ ul.nav li.nactive a {
 	width: var(--baseWidth);
 	height: 90vh;
 	min-height: 649px;
-	border: 2px solid rgb(200, 200, 200);
+	border: none;
 	overflow: auto;
 	display: inline-block;
 }
@@ -174,8 +175,30 @@ ul.nav li.nactive a {
 }
 
 /*lecture formatting*/
+.lecture::-webkit-scrollbar {
+	height: 8px;
+	width: 8px;
+}
+
+.lecture::-webkit-scrollbar-thumb {
+	border: 1px solid darkgray;
+	border-radius: 4px;
+	background-color: darkgray;
+}
+
+.lecture::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+
 .lect-title {
 	margin-left: 22.2px
+}
+
+ol.lectlist h6 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 20px 0 8px 0;
 }
 
 .lectlist {margin-right: 5px;}
@@ -193,10 +216,12 @@ ul.nav li.nactive a {
 
 .inner-list div.inst {margin-left: 37.2px}
 
-.instblock {margin:20px 0px 40px 20px;}
+.instblock {margin:15px 0px 40px 20px;}
+
+.sub-inst {margin: 15px 0 40px 37.2px;}
 
 .inst {
-	margin: 20px 0px 40px 60px;
+	margin: 15px 0px 40px 60px;
 }
 
 code.out, pre.out {
