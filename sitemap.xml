@@ -20,12 +20,12 @@
 <url>
   <loc>https://missing-solutions.site/solution.php</loc>
   <lastmod>2024-11-04T06:55:03+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/about.php</loc>
   <lastmod>2024-11-04T06:55:03+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.40</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/solution.php?link=lect1</loc>
@@ -80,62 +80,62 @@
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture1.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture2.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture3.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture4.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture5.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture6.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture7.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture8.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture9.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/lecture10.htm</loc>
   <lastmod>2024-11-03T23:27:10+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/lectsol/default.html</loc>
   <lastmod>2024-10-27T00:09:03+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.20</priority>
 </url>
 <url>
   <loc>https://missing-solutions.site/theanswer.html</loc>
   <lastmod>2024-10-27T00:09:03+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.10</priority>
 </url>
 
 
