@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://missing-solutions.site/sitemap.xml
