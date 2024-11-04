@@ -26,7 +26,9 @@ codeBlocks.forEach(function(code) {
     code.lastElementChild.classList.add('display');
   });
 
-  code.addEventListener('mouseout', function() {
-    code.lastElementChild.classList.remove('display');
+  code.addEventListener('mouseleave', function() {
+    setTimeout(() => {
+		code.lastElementChild.classList.remove('display');
+	}, 1000);
   });
 });
