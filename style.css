@@ -175,21 +175,29 @@ ul.nav li.nactive a {
 }
 
 /*lecture formatting*/
+.lecture {overflow: auto;}
+
 .lecture::-webkit-scrollbar {
-	height: 8px;
-	width: 8px;
+	    width: 8px; 
+	}
+
+/* Hide scrollbar thumb initially */
+.lecture::-webkit-scrollbar-thumb {
+    width: 0; 
+    transition: width 1s ease; 
 }
 
-.lecture::-webkit-scrollbar-thumb {
-	border: 1px solid darkgray;
-	border-radius: 4px;
-	background-color: darkgray;
+/* Show scrollbar thumb on hover */
+.lecture:hover::-webkit-scrollbar-thumb {
+    width: 8px; 
+    background-color: darkgray;
+    border-radius: 4px;
 }
+
 
 .lecture::-webkit-scrollbar-corner {
 	background: transparent;
 }
-
 
 .lect-title {
 	margin-left: 22.2px
