@@ -151,11 +151,11 @@ ul.nav li:hover {
 	background-color: var(--lightBlue); 
 }	
 
-ul.nav li.nactive {
+ul.nav li.active-nav {
 	background-color: var(--darkBlue);
 }
 
-ul.nav li.nactive a {
+ul.nav li.active-nav a {
 	font-size: 1.35em;
 	padding: 10px 13px;
 }
