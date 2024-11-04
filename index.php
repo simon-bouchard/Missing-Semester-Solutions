@@ -39,16 +39,16 @@
 	<h4 style="text-align: left;">Exercise solutions:</h4>
 
 	<ul class=list>
-		<li><a href='solution.htm?link=lect1' onclick="sendMessageToIframe('lectsol/lecture1.htm')">Lecture 1</a></li>
-		<li><a href='solution.htm?link=lect2'>Lecture 2</a></li>
-		<li><a href='solution.htm?link=lect3'>Lecture 3</a></li>
-		<li><a href='solution.htm?link=lect4'>Lecture 4</a></li>
-		<li><a href='solution.htm?link=lect5'>Lecture 5</a></li>
-		<li><a href='solution.htm?link=lect6'>Lecture 6</a></li>
-		<li><a href='solution.htm?link=lect7'>Lecture 7</a></li>
-		<li><a href='solution.htm?link=lect8'>Lecture 8</a></li>
-		<li><a href='solution.htm?link=lect9'>Lecture 9</a></li>
-		<li><a href='solution.htm?link=lect10'>Lecture 10</a></li>
+		<li><a href='solution.php?link=lect1' onclick="sendMessageToIframe('lectsol/lecture1.htm')">Lecture 1</a></li>
+		<li><a href='solution.php?link=lect2'>Lecture 2</a></li>
+		<li><a href='solution.php?link=lect3'>Lecture 3</a></li>
+		<li><a href='solution.php?link=lect4'>Lecture 4</a></li>
+		<li><a href='solution.php?link=lect5'>Lecture 5</a></li>
+		<li><a href='solution.php?link=lect6'>Lecture 6</a></li>
+		<li><a href='solution.php?link=lect7'>Lecture 7</a></li>
+		<li><a href='solution.php?link=lect8'>Lecture 8</a></li>
+		<li><a href='solution.php?link=lect9'>Lecture 9</a></li>
+		<li><a href='solution.php?link=lect10'>Lecture 10</a></li>
 	</ul>
 
 	<p><br>I recommand only looking at the solutions after completing the exercises or if you are really stuck.</p>
