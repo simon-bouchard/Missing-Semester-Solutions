@@ -132,10 +132,6 @@ ul.nav li {
 	margin: 0;
 }
 
-ul.nav li:last-child a {
-	border-right:none;
-}
-
 ul.nav li a {
 	display: inline-block;
 	color: white;
@@ -145,6 +141,10 @@ ul.nav li a {
 	font-size: 1.14em;
 	width:120px;
 	/*border-right: 2px solid white;*/
+}
+
+ul.nav li:last-child a, ul.nav li:first-child a {
+	width: 80px;
 }
 
 ul.nav li:hover {
