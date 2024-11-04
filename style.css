@@ -348,7 +348,7 @@ pre.out code {white-space: pre;}
 .copy {
 	background-color: var(--lightGray);
 	padding: 5px 10px;
-	border: 1px solid black;
+	border: 1px solid gray;
 	border-radius: 3px;
 	bottom: 6.6px;
 	cursor: pointer;

@@ -76,6 +76,8 @@
 
 <script src='js/activeNav.js'></script>
 
+<script src='js/visitedLectureCookie.js'></script>
+
 <script src='js/audioPlayer.js'></script>
 
 <script src='js/lectureNavParentPage.js'></script>
