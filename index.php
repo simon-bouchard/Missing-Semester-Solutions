@@ -3,9 +3,10 @@
 
 <head>
 
+<!-- SEO tags -->
 <title>The Missing Solutions | MIT Missing Semester Exercise Solutions (2020)</title>
 
-<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercise. This extensive guide will guide you through the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!'/>
+<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercise. This extensive guide will guide you through the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
 <link rel='canonical' href='https://missing-solutions.site'/>
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Missing Solutions | Missing Semester Exercise Solution (2020)"/>
@@ -39,6 +40,102 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://missing-solutions.site/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Exercise Solutions",
+      "item": "https://missing-solutions.site/solution.php"
+	},
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "About this page",
+      "item": "https://missing-solutions.site/about.php"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "listitem",
+      "position": 1,
+      "name": "lecture 1 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect1"
+    },
+    {
+      "@type": "listitem",
+      "position": 2,
+      "name": "lecture 2 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect2"
+    },
+    {
+      "@type": "listitem",
+      "position": 3,
+      "name": "lecture 3 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect3"
+    },
+    {
+      "@type": "listitem",
+      "position": 4,
+      "name": "lecture 4 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect4"
+    },
+    {
+      "@type": "listitem",
+      "position": 5,
+      "name": "lecture 5 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect5"
+    },
+    {
+      "@type": "listitem",
+      "position": 6,
+      "name": "lecture 6 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect6"
+    },
+    {
+      "@type": "listitem",
+      "position": 7,
+      "name": "lecture 7 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect7"
+    },
+    {
+      "@type": "listitem",
+      "position": 8,
+      "name": "lecture 8 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect8"
+    },
+    {
+      "@type": "listitem",
+      "position": 9,
+      "name": "lecture 9 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect9"
+    },
+    {
+      "@type": "listitem",
+      "position": 10,
+      "name": "lecture 10 exercise solutions",
+      "item": "https://missing-solutions.site/solution.php?link=lect10"
+    },
+
+  ]
+}
+</script>
 
 <link rel="icon" type="image/x-icon" href="images/command.png"> 
 
