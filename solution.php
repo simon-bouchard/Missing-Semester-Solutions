@@ -3,7 +3,7 @@
 
 <head>
 
-<title>2024 Solutions | Missing Solutions</title>
+<title>MIT Missing Semester 2020 Exercise Solutions (2024) | Missing Solutions</title>
 
 <link rel="icon" type="image/x-icon" href="images/command.png">
 

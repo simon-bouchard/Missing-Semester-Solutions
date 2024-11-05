@@ -3,7 +3,7 @@
 
 <head>
 
-<title>About | Missing Solutions</title>
+<title>About | Missing Solutions | MIT Missing Semester</title>
 
 <link rel="icon" type="image/x-icon" href="images/command.png">
 

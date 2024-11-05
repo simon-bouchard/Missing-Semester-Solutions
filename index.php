@@ -3,7 +3,42 @@
 
 <head>
 
-<title>The Missing Solutions of your Missing Semester</title>
+<title>The Missing Solutions | MIT Missing Semester Exercise Solutions (2020)</title>
+
+<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercise. This extensive guide will guide you through the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!'/>
+<link rel='canonical' href='https://missing-solutions.site'/>
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Missing Solutions | Missing Semester Exercise Solution (2020)"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercise. This extensive guide will guide you through the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
+<meta property="og:url" content="missing-solutions.site/"/>
+<meta property="og:site_name" content="Missing Solutions"/>
+<meta property="og:image" content="https://missing-solutions.site/images/command.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "headline": "Missing Solutions",
+  "@type": "WebSite",
+  "name": "Missing Solutions | Missing Semester Exercise Solutions",
+  "url": "https://missing-solutions.site/",
+  "description": "The complete and detailed solutions to the MIT Missing Semester exercise. This extensive guide will guide you through the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
+  "publisher": {
+    "@type": "Person",
+    "name": "Simon Bouchard",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://missing-solutions.site/images/command.png" 
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://missing-solutions.site/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 
 <link rel="icon" type="image/x-icon" href="images/command.png"> 
 
