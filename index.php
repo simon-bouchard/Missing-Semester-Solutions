@@ -19,7 +19,7 @@
 <?php include 'partials/naviguation.php'; ?>
 
 <header class="p">
-<h1>The Missing Solutions of your Missing Semester Class</h1>
+<?php include 'partials/header.php'; ?>
 <h2>Edition 2020</h2>
 <h4>Completed in 2024 by <a href="https://github.com/simon-bouchard" target="_blank">Simon Bouchard</a></h4>
 <h4>Using Windows subsystem for linux</h4>

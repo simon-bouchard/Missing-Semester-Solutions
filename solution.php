@@ -19,7 +19,7 @@
 <?php include 'partials/naviguation.php'; ?>
 
 <header class="p">
-<h1>The Missing Solutions of your Missing Semester class</h1>
+<?php include 'partials/header.php'; ?>
 
 <br><br><br>
 <h2>Exercise solutions<br></h2>
