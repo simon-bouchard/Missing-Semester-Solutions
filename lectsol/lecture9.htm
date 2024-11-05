@@ -118,7 +118,13 @@
 						<div class=code-container><code class="in">git commit -S -m "Your commit message"</code>
 							<button class="copy">Copy</button></div>
 						Verify the commit signature:
-						<div class=code-container><code class="in">git commit -S -m "Your commit message"</code>
+						<div class=code-container><code class="in">git show --show-signature</code>
+							<button class="copy">Copy</button></div>
+						Create a signed tag:
+						<div class=code-container><code class="in">git tag -s v1.0 -m "Version 1.0 release"</code>
+							<button class="copy">Copy</button></div>
+						Verify the signature on the tag:
+						<div class=code-container><code class="in">git tag -v v1.0</code>
 							<button class="copy">Copy</button></div>
 					</div>
 				</li>
