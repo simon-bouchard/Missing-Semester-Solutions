@@ -167,12 +167,22 @@ echo "Unique boot messages that were not shared among the last three boots are s
 									<li>First you need to install pup if you don't already have it
 										<div class=code-container><code class=in>sudo apt-get install pup</code>
 											<button class="copy">Copy</button></div></li>
+
+									<li>Fetch the data with curl and put it in a file so you only have to do it once.
+										<div class=code-container><code class=in>curl -s https://stats.wikimedia.org/EN/TablesWikipediaZZ.htm -o wikimedia_data.html</code>
+											<button class="copy">Copy</button></div></li>
+
 									<li>Then, to get the min and max:
-										<div class=code-container><code class=in>./run_until_fail</code>
-											<button class="copy">Copy</button></div></li>
+										<div class=code-container><code class=in>pup 'table:nth-of-type(1) tr td:nth-of-type(3) text{}' &lt; wikimedia_data.html | grep -Eo '[0-9]+' | sort -n | awk 'NR==1{print "Min:", $1} END{print "Max:", $1}'</code>
+											<button class="copy">Copy</button></div>
+										<p class=pinst><code>pup</code> takes the 3rd column of the first table, grep filters out none digits (remove whitespace), <code>sort -n</code> sorts the results to get min and max. <code>awk</code> prints the first (min) and last (max) lines (values).</li>
+									
 									<li>And for the difference of the sum of each column
-										<div class=code-container><code class=in>curl -s "https://stats.wikimedia.org/EN/TablesWikipediaZZ.htm" | pup 'table tr td:nth-of-type(4), table tr td:nth-of-type(5) text{}' | awk 'NR%2{edit_sum += $1} !NR%2{page_sum += $1} END {print "Difference of sums:", edit_sum - page_sum}'</code>
+										<div class=code-container><code class=in>echo "Difference of Sums: $(echo "$(pup 'table:nth-of-type(1) tr td:nth-of-type(3) text{}' &lt; wikimedia_data.html | grep -Eo '[0-9]+' | paste -sd+ - | bc) - $(pup 'table:nth-of-type(1) tr td:nth-of-type(4) text{}' &lt; wikimedia_data.html | grep -Eo '[0-9]+' | paste -sd+ - | bc)" | bc)"</code>
 											<button class="copy">Copy</button></div></li>
+									<p class=pinst>This command clalculates the sum of each column inside the parenthesis and then substracts them. </p>
+									<p class=pinst>Inside the parenthesis, you should already know what pup and grep do from the last step. <code>paste -sd+ -</code> is used to concatenate all lines into a single line (<code>-s</code> option). <code>-d+</code> separates each value by a <code>+</code> operator. The <code>-</code> is used to make to standard output of the last command into the standard input of this one.</p>
+									<p class=pinst>Finally <code>bc</code> transform the string into a mathematical operation.</p>
 
 								</ol>
 							</div>
