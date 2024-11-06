@@ -48,6 +48,8 @@
 
 <link rel="stylesheet" href="styles/main.css">
 
+<link rel="stylesheet" href="styles/audioPlayer.css">
+
 </head>
 
 <body>
