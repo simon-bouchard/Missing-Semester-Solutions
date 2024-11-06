@@ -6,12 +6,12 @@
 <!-- SEO tags -->
 <title>The Missing Solutions | MIT Missing Semester Exercise Solutions (2020)</title>
 
-<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides solutions to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
+<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
 <link rel='canonical' href='https://missing-solutions.site'/>
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Missing Solutions | Missing Semester Exercise Solution (2020)"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides solutions to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
+<meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
 <meta property="og:url" content="missing-solutions.site/"/>
 <meta property="og:site_name" content="Missing Solutions"/>
 <meta property="og:image" content="https://missing-solutions.site/images/command.png" />
@@ -23,7 +23,7 @@
   "@type": "WebSite",
   "name": "Missing Solutions | Missing Semester Exercise Solutions",
   "url": "https://missing-solutions.site/",
-  "description": "The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides solutions to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
+  "description": "The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
   "publisher": {
     "@type": "Person",
     "name": "Simon Bouchard",
@@ -142,7 +142,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles/main.css">
 
 </head>
 

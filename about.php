@@ -4,13 +4,47 @@
 <head>
 
 <title>About | Missing Solutions | MIT Missing Semester</title>
+<meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
+<link rel='canonical' href='https://missing-solutions.site/about.php'/>
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="About | Missing Solutions | MIT Missing Semester"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
+<meta property="og:url" content="missing-solutions.site/about.php"/>
+<meta property="og:site_name" content="Missing Solutions"/>
+<meta property="og:image" content="https://missing-solutions.site/images/command.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "headline": "Missing Solutions",
+  "@type": "WebSite",
+  "name": "About | Missing Solutions | MIT Missing Semester",
+  "url": "https://missing-solutions.site/about.php",
+  "description": "The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
+  "publisher": {
+    "@type": "Person",
+    "name": "Simon Bouchard",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://missing-solutions.site/images/command.png" 
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://missing-solutions.site/about.php?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 
 <link rel="icon" type="image/x-icon" href="images/command.png">
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles/main.css">
 
 </head>
 
