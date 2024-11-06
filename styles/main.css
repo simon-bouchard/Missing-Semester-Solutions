@@ -306,10 +306,4 @@ ul.list.nobold li a {font-weight: normal;} /*for about list*/
 		margin: auto;
 	}
 
-@media (max-width: 452px) {
-	.player-container {
-		width: calc(100% - 4px);
-		margin-left: 2px;
-		margin-right: 2px;
-	}
-}
+

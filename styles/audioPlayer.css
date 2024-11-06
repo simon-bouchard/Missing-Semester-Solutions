@@ -57,4 +57,10 @@ audio::-webkit-media-controls-panel {
 	margin: 0;
 }
 
-
+@media (max-width: 452px) {
+	.player-container {
+		width: calc(100% - 4px);
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+}
