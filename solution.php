@@ -112,6 +112,8 @@
 
 <?php include 'partials/footer.php'; ?>
 
+<script src='js/cookieUtils.js'></script>
+
 <script src='js/activeNav.js'></script>
 
 <script src='js/visitedLectureCookie.js'></script>
