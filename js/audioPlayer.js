@@ -34,34 +34,34 @@ const audioPlayer = document.getElementById('audioPlayer');
 const trackName = document.getElementById('trackName');
 
 function loadTrack(index) {
-audioPlayer.src = playlist[index].src;
+	audioPlayer.src = playlist[index].src;
 
-if (playlist[index].name) {
-trackName.textContent = playlist[index].name
-} else {
-trackName.textContent = "Here are some beats to help you relax while you do the exercises"
-}
+	if (playlist[index].name) {
+		trackName.textContent = playlist[index].name
+		} else {
+		trackName.textContent = "Here are some beats to help you relax while you do the exercises"
+	}
 	
-audioPlayer.play()
-setCookie("lastPlayedTrack", index, 7); // Store track index in cookie for 7 days
+	audioPlayer.play()
+	setCookie("lastPlayedTrack", index, 7); // Store track index in cookie for 7 days
 }
 
 //Next Button
 document.getElementById('audioNextBtn').addEventListener('click', () => {
-currentTrack = (currentTrack + 1) % playlist.length;
-loadTrack(currentTrack);
+	currentTrack = (currentTrack + 1) % playlist.length;
+	loadTrack(currentTrack);
 });
 
 //Previous Button
 document.getElementById('audioPrevBtn').addEventListener('click', () => {
-currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
-loadTrack(currentTrack);
+	currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+	loadTrack(currentTrack);
 });
 
 //Auto Next Track
 audioPlayer.addEventListener('ended', () => {
-currentTrack = (currentTrack + 1) % playlist.length;
-loadTrack(currentTrack);
+	currentTrack = (currentTrack + 1) % playlist.length;
+	loadTrack(currentTrack);
 });
 
 // Function to load the last played track on page load
@@ -71,6 +71,7 @@ function loadLastPlayedTrack() {
         const index = parseInt(lastPlayedIndex);
         if (!isNaN(index) && playlist[index]) {
             loadTrack(index); // Play the last track
+			audioPlayer.pause();
         }
     }
 }
