@@ -73,9 +73,9 @@
 
 <div class=ablock>
 <h5 id=why>Why this page?</h5>
-<p>While completing the missing semester class I came to an exercise I had a hard time completing. I tried looking online for solutions only to find that most people only published the solutions of the first few lectures or didn't have solutions to the harder exercises. I then realised I had to find the solutions myself. So I did.</p>
-<p>Fast forward to when I finished the class, I was looking for ways to practice while learning HTML. I remembered those incomplete solutions and thought I might as well create a webstite and put my incomplete solutions there. However, by that time, my solutions to the exercises were almost complete. And that's when it hit me: what if I created a solutions website with no missing solutions and call it the Missing solutions.</p>
-<p>So here I am a few weeks later. Still no idea how a computer works but I made this site and I am proud to say that it is the very first (probably not) missing semester solutions collection with no missing solutions. I even added some extra exercises for lecture 10! (By the time of writing this there are still a lot of missing solutions on this site but let's just pretend for now.)</p>
+<p>Only a few months ago I was in your shoes: just a guy trying to find solutions to the Missing Semester exercises. I tried looking online only to find that most people only published the solutions of the first few lectures and/or didn't have solutions to the harder exercises and that I had to find the solutions myself. So I did.</p>
+<p>Fast forward to after I finished the class, I was looking for ways to practice while learning web developpement. I remembered those incomplete solutions website and thought I might as well create a webstite and put my incomplete solutions there too. However, by that time, my solutions to the exercises were almost complete. And that's when it hit me: what if I created a solutions website with no missing solutions and call it the Missing solutions.</p>
+<p>So here I am a few weeks later. I made this site and I am proud to say that it is the very first (probably not) missing semester solutions collection with no missing solutions. I even added some extra exercises for lecture 10!</p>
 <p>I tried to make this page as fool proof as possible but you can still <a href="https://github.com/simon-bouchard/missing-semester_solutions/issues" target="_blank"</a>report issues</a> on github or send me an email <a href="mailto:">here</a>. (I strongly adivise against the second option. Since it is not my real email, I have very little chance of actually seeing it.)</p>
 </div>
 
@@ -86,10 +86,11 @@
 	<li>Anything that isn't indented (or least indented) reprensents the exercises from the the course.</li>
 	<li>Anything that is indented reprensents my solutions, instructions and explanations.</li>
 	<li>Content displayed in light-gray, round bordered boxes reprensents command line inputs. In other words, what you should type in the shell, the solutions.</li>
-	<li>Content displayed in black boxes reprensents command line output. I put it there so you can verify everything went accordingly or to make sure your solution (different) gave the same output.</li>
+	<li>Content displayed in black boxes labelled "Terminal output :" reprensents command line output. I put it there so you can verify everything went accordingly or to make sure your solution (different) gave the same output.</li>
+	<li>Content diplayed in black round cornerd boxes labelled something else than "Terminal output: " represents script files used as solution to the exercises. The label represents the name of the file (used in later script/command reference.</li>
 	<li>Content displayed in gray, dash bordered boxes represents input lines from the course exercises.</li>
 	<li>Indented paragraphs that come before command inputs reprensents my instructions for that exercise.</li>
-	<li>Indented paragraphs that come after command inputs and outputs reprensents explanations on the code used.</li>
+	<li>Indented paragraphs that come after command inputs and outputs reprensents explanations of the code used.</li>
 </ul>
 </div>
 
@@ -106,6 +107,7 @@
 	<li>I completed the exercises in 2024 and plan on verifying everything in 2025</li>
 	<li>You can contribute to this page <a href="https://github.com/simon-bouchard/missing-semester_solutions" target="_blank">here</a>.</li> 
 	<li>You can find all my other projects (none at the moment) <a href="https://github.com/simon-bouchard" target="_blank">here</a></li>
+	<li>This web site is deployed on my own LAMP server running on an Oracle Cloud vm.</li>
 </ul>
 </div>
 
