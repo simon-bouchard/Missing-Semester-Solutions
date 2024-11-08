@@ -5,12 +5,12 @@
 
 <title>About | Missing Solutions | MIT Missing Semester</title>
 <meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
-<link rel='canonical' href='https://missing-solutions.site/about.php'/>
+<link rel='canonical' href='https://missing-solutions.site/About'/>
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="About | Missing Solutions | MIT Missing Semester"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
-<meta property="og:url" content="missing-solutions.site/about.php"/>
+<meta property="og:url" content="missing-solutions.site/About"/>
 <meta property="og:site_name" content="Missing Solutions"/>
 <meta property="og:image" content="https://missing-solutions.site/images/command.png" />
 
@@ -20,7 +20,7 @@
   "headline": "Missing Solutions",
   "@type": "WebSite",
   "name": "About | Missing Solutions | MIT Missing Semester",
-  "url": "https://missing-solutions.site/about.php",
+  "url": "https://missing-solutions.site/About",
   "description": "The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
   "publisher": {
     "@type": "Person",
@@ -32,7 +32,7 @@
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://missing-solutions.site/about.php?s={search_term_string}",
+    "target": "https://missing-solutions.site/About?s={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -73,7 +73,7 @@
 
 <div class=ablock>
 <h5 id=why>Why this page?</h5>
-<p>Only a few months ago I was in your shoes: just a guy trying to find solutions to the Missing Semester exercises. I tried looking online only to find that most people only published the solutions of the first few lectures and/or didn't have solutions to the harder exercises and that I had to find the solutions myself. So I did.</p>
+<p>Only a few months ago I was in your shoes: just a guy trying to find solutions to the Missing Semester exercises. I tried looking online only to find that most people only published the solutions of the first few lectures and/or didn't have solutions to the harder exercises and that I had to find the solutions myself.</p>
 <p>Fast forward to after I finished the class, I was looking for ways to practice while learning web developpement. I remembered those incomplete solutions website and thought I might as well create a webstite and put my incomplete solutions there too. However, by that time, my solutions to the exercises were almost complete. And that's when it hit me: what if I created a solutions website with no missing solutions and call it the Missing solutions.</p>
 <p>So here I am a few weeks later. I made this site and I am proud to say that it is the very first (probably not) missing semester solutions collection with no missing solutions. I even added some extra exercises for lecture 10!</p>
 <p>I tried to make this page as fool proof as possible but you can still <a href="https://github.com/simon-bouchard/missing-semester_solutions/issues" target="_blank"</a>report issues</a> on github or send me an email <a href="mailto:">here</a>. (I strongly adivise against the second option. Since it is not my real email, I have very little chance of actually seeing it.)</p>

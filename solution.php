@@ -6,12 +6,12 @@
 <!-- SEO tag-->
 <title>MIT Missing Semester 2020 Exercise Solutions (2024) | Missing Solutions</title>
 <meta name='description' content='The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!' />
-<link rel='canonical' href='https://missing-solutions.site/solution.php'/>
+<link rel='canonical' href='https://missing-solutions.site/ExerciseSolutions'/>
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="MIT Missing Semester 2020 Exercise Solutions (2024) | Missing Solutions"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:description" content="The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!"/>
-<meta property="og:url" content="missing-solutions.site/solution.php"/>
+<meta property="og:url" content="missing-solutions.site/ExerciseSolutions"/>
 <meta property="og:site_name" content="Missing Solutions"/>
 <meta property="og:image" content="https://missing-solutions.site/images/command.png" />
 
@@ -21,7 +21,7 @@
   "headline": "Missing Solutions",
   "@type": "WebSite",
   "name": "MIT Missing Semester 2020 Exercise Solutions (2024) | Missing Solutions",
-  "url": "https://missing-solutions.site/solution.php",
+  "url": "https://missing-solutions.site/ExerciseSolutions",
   "description": "The complete and detailed solutions to the MIT Missing Semester exercises. This extensive guide provides corrections to the exercises of lectures 1 to 10 with NO MISSING SOLUTIONS!",
   "publisher": {
     "@type": "Person",
@@ -33,7 +33,7 @@
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://missing-solutions.site/solution.php/?s={search_term_string}",
+    "target": "https://missing-solutions.site/ExerciseSolutions/?s={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
