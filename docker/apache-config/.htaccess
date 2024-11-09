@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^ExerciseSolutions$ solution.php [L]
+RewriteRule ^About$ about.php [L]
