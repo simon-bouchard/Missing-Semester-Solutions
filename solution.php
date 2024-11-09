@@ -50,6 +50,8 @@
 
 <link rel="stylesheet" href="styles/audioPlayer.css">
 
+<link rel="stylesheet" href="styles/sideMenu.css">
+
 </head>
 
 <body>
