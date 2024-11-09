@@ -2,7 +2,7 @@
 Here is the repository for the missing solutions website
 Feel free to contribute
 
-##Set up a the docker to test the server on your own machine
+## Set up a the docker to test the server on your own machine
 First create the directory that will contain this repository (ex.: missing-solutions)
 Then, clone this repository in that directory (git clone https://github.com/simon-bouchard/simon-bouchard.github.io)
 After that, make create a directory called apache-config: mkdir apache-config
