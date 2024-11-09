@@ -70,7 +70,8 @@ function loadLastPlayedTrack() {
     if (lastPlayedIndex !== null) {
         const index = parseInt(lastPlayedIndex);
         if (!isNaN(index) && playlist[index]) {
-            loadTrack(index); // Play the last track
+			currentTrack = index
+            loadTrack(currentTrack); // Play the last track
 			audioPlayer.pause();
         }
     }
