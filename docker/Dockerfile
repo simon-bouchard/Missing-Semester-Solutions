@@ -22,5 +22,5 @@ COPY apache-config/.htaccess /var/www/html/.htaccess
 # Enable mod rewrite
 RUN a2enmod rewrite
 
-# Expose port 443 for HTTPS
+# Expose port 80 for HTTP
 EXPOSE 80

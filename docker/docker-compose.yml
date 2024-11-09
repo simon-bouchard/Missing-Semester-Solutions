@@ -12,16 +12,3 @@ services:
     depends_on:
       - db
 
-  db:
-    image: mysql:8.0.39
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: test_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpassword
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./db:/docker-entrypoint-initdb.d  # Import SQL dump
-
-volumes:
-  db_data:
