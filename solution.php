@@ -69,16 +69,16 @@
 <div class="center">
 <div class='menu'>
 	<ul>
-		<li><a href='lectsol/lecture1.htm' target="iframe" id="lect1">Lecture 1</a></li>
-		<li><a href='lectsol/lecture2.htm' target="iframe" id="lect2">Lecture 2</a></li>
-		<li><a href='lectsol/lecture3.htm' target="iframe" id="lect3">Lecture 3</a></li>
-		<li><a href='lectsol/lecture4.htm' target="iframe" id="lect4">Lecture 4</a></li>
-		<li><a href='lectsol/lecture5.htm' target="iframe" id="lect5">Lecture 5</a></li>
-		<li><a href='lectsol/lecture6.htm' target="iframe" id="lect6">Lecture 6</a></li>
-		<li><a href='lectsol/lecture7.htm' target="iframe" id="lect7">Lecture 7</a></li>
-		<li><a href='lectsol/lecture8.htm' target="iframe" id="lect8">Lecture 8</a></li>
-		<li><a href='lectsol/lecture9.htm' target="iframe" id="lect9">Lecture 9</a></li>
-		<li><a href='lectsol/lecture10.htm' target="iframe" id="lect10">Lecture 10</a></li>
+		<li><a href='lectsol/lecture1.php' target="iframe" id="lect1">Lecture 1</a></li>
+		<li><a href='lectsol/lecture2.php' target="iframe" id="lect2">Lecture 2</a></li>
+		<li><a href='lectsol/lecture3.php' target="iframe" id="lect3">Lecture 3</a></li>
+		<li><a href='lectsol/lecture4.php' target="iframe" id="lect4">Lecture 4</a></li>
+		<li><a href='lectsol/lecture5.php' target="iframe" id="lect5">Lecture 5</a></li>
+		<li><a href='lectsol/lecture6.php' target="iframe" id="lect6">Lecture 6</a></li>
+		<li><a href='lectsol/lecture7.php' target="iframe" id="lect7">Lecture 7</a></li>
+		<li><a href='lectsol/lecture8.php' target="iframe" id="lect8">Lecture 8</a></li>
+		<li><a href='lectsol/lecture9.php' target="iframe" id="lect9">Lecture 9</a></li>
+		<li><a href='lectsol/lecture10.php' target="iframe" id="lect10">Lecture 10</a></li>
 	</ul>
 
 
