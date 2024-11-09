@@ -12,7 +12,7 @@ Feel free to contribute
 * Cd to the repository and copy the files in docker in the repository's parent directory (missing-solutions): 
 
 ```bash
-cp -r docker/\* .. 
+cp -r docker/* .. 
 ```
 
 
