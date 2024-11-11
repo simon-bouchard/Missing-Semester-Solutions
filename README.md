@@ -3,7 +3,7 @@ Here is the repository for the missing solutions website
 
 Feel free to contribute
 
-## Set up the docker to test the server on your own machine
+## Set up the docker to test the website on your own machine server
 
 * First create the directory that will contain this repository (ex.: missing-solutions)
 
@@ -29,7 +29,7 @@ mv simon-bouchard.github.io src
 docker-compose up --build
 ```
 
-* Finally, you can acces your local server on http://localhost:8000/ on a browser.
+* Finally, you can acces your local server on http://localhost:8080/ on a browser.
 
 * You can close the docker with ctrl-c.
 

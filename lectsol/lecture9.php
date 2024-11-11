@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="../styles/lecture.php">
+<link rel="stylesheet" href="../styles/lecture.css">
 </head>
 
 <body class=lecture>
@@ -19,7 +19,7 @@
 			<ol class=inner-list>
 				<li>Suppose a password is chosen as a concatenation of four lower-case dictionary words, where each word is selected uniformly at random from a dictionary of size 100,000. An example of such a password is <code>correcthorsebatterystaple</code>. How many bits of entropy does this have?
 					<div class=sub-inst>
-						If we assume the way to generate the password is known publicly, there are 10 000^4 = 10^20 combinations possible. Since the entropy is of a password is equal to the logarythm base two of the number of possibilities, we can see that this password generator has log<sub>2</sub>(10<sup>20</sup>) = 66.44 bits of entropy.
+						If we assume the way to generate the password is known by the potential hacker, there are 10 000^4 = 10^20 combinations possible. Since the entropy is of a password is equal to the logarythm base two of the number of possibilities, we can see that this password generator has log<sub>2</sub>(10<sup>20</sup>) = 66.44 bits of entropy.
 					</div>
 				</li>
 
