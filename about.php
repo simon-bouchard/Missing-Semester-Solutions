@@ -67,6 +67,7 @@
 	<li><a href=#solform>Solutions formatting</a></li>
 	<li><a href=#info>General info</a></li>
 	<li><a href=#aboutMusic>About the music</a></li>
+	<li><a href=#cookies>Want some cookies?</a></li>
 	<li><a href=#contributions>Contributions</a></li>
 </ul>
 </div>
@@ -74,7 +75,7 @@
 <div class=ablock>
 <h5 id=why>Why this page?</h5>
 <p>Only a few months ago I was in your shoes: just a guy trying to find solutions to the Missing Semester exercises. I tried looking online only to find that most people only published the solutions of the first few lectures and/or didn't have solutions to the harder exercises and that I had to find the solutions myself.</p>
-<p>Fast forward to after I finished the class, I was looking for ways to practice while learning web developpement. I remembered those incomplete solutions website and thought I might as well create a webstite and put my incomplete solutions there too. However, by that time, my solutions to the exercises were almost complete. And that's when it hit me: what if I created a solutions website with no missing solutions and call it the Missing solutions.</p>
+<p>Fast forward to after I finished the class, I was looking for ways to practice while learning web developpement. I remembered all those missings solutions online and thought I might as well create a webstite and put my incomplete solutions there too. However, by that time, my solutions to the exercises were almost complete. And that's when it hit me: what if I created a solutions website with no missing solutions and call it the Missing Solutions of your Missing Semester's Class.</p>
 <p>So here I am a few weeks later. I made this site and I am proud to say that it is the very first (probably not) missing semester solutions collection with no missing solutions. I even added some extra exercises for lecture 10!</p>
 <p>I tried to make this page as fool proof as possible but you can still <a href="https://github.com/simon-bouchard/missing-semester_solutions/issues" target="_blank"</a>report issues</a> on github or send me an email <a href="mailto:">here</a>. (I strongly adivise against the second option. Since it is not my real email, I have very little chance of actually seeing it.)</p>
 </div>
@@ -114,6 +115,12 @@
 <div class=ablock>
 	<h5 id=aboutMusic>About the music</h5>
 	<p>If you heard the music from the solutions page and thought "Mmhhh, those songs are good, I wish there was some place more convenient I could listen to his beats" well, <a href='theanswer.html' target="_blank">here</a> is the answer.</p>
+</div>
+
+<div class=ablock>
+	<h5 id=cookies>Want some cookies?</h5>
+	<p>This page contains some very harmless cookies that remember which lectures you visited and the last track that played. I would set an option to disable them, but ironically, that would also take a cookie which would be the same size as the cookies it would prevent...</p>
+</div>
 
 <div class=ablock>
 <h5 id=contributions>Contributions</h5>
