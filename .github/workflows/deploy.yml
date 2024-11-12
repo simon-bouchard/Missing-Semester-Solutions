@@ -1,0 +1,31 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to Server
+      run: |
+        # Install rsync if necessary
+        sudo apt-get update
+        sudo apt-get install -y rsync
+
+        # Use rsync to deploy the files to the server
+        rsync -avz --delete ./ ubuntu@155.248.232.117:/var/www/html
+
+        # Restart the web server
+        ssh -o StrictHostKeyChecking=no ubuntu@155.248.232.117 'sudo systemctl restart apache2'
